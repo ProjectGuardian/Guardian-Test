@@ -4,6 +4,7 @@
       "experimentalDecorators": true,
       "target": "ES5",
       "baseUrl": "src",
+      "lib": ["es2015","dom"],
       "paths": {
           "@/*": [
               "app/*"

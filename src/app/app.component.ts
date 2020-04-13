@@ -12,6 +12,7 @@ import './_content/app.less';
 })
 export class AppComponent {
     currentUser: User;
+  title: "AUP | Guardians";
 
     constructor(
         private router: Router,
