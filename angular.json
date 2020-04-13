@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Guardian-Test"
+    }
+  },
+  "defaultProject": "Guardian-Test",
+  "cli": {
+    "analytics": false
+  }
 }
