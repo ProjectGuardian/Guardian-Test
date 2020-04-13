@@ -7,7 +7,7 @@ import { User } from './_models';
 import './_content/app.less';
 
 @Component({ 
-    selector: 'app', 
+    selector: 'app-root', 
     templateUrl: 'app.component.html'
 })
 export class AppComponent {
