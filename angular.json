@@ -28,9 +28,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "styles.less"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
