@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open",
+    "deploy": "npm run package && ngh --dir=dist/Guardian-Test"
   },
   "private": true,
   "dependencies": {
