@@ -2,9 +2,12 @@
   "name": "guardian-test",
   "version": "0.0.0",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open",
-    "deploy": "npm run package && ngh --dir=dist/Guardian-Test"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
