@@ -1,17 +1,8 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <div class="flexbox">
-            <div><img src="https://github.com/CjEspinoza/images/blob/master/gicon2.png?raw=true" class="minilogo"></div>
-            <div><a class="nav-item nav-link" routerLink="/">Home</a></div>
-            <div><a class="nav-item nav-link" (click)="logout()">Logout</a></div>
-        </div>
-    </div>
-  </nav>  
-<h1>Hi {{currentUser.firstName}}!</h1>
-<h3>All registered users:</h3>
-<ul>
-    <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
-</ul>
+<div class="newsbar">
+
+</div>
+<div class="flexbox">
+    <app-post></app-post>
+</div>
+
+

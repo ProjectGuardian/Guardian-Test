@@ -54,7 +54,11 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
+                    if(this.f.username.value == 'Admin'){
+                        this.router.navigate([this.f.username.value]);
+                    }else
                     this.router.navigate([this.returnUrl]);
+                    
                 },
                 error => {
                     this.alertService.error(error);

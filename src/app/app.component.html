@@ -1,3 +1,17 @@
+<div class="glogo"><img src="https://github.com/CjEspinoza/images/blob/master/gicon2.png?raw=true" class="minilogo"></div>
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="navbar-nav">
+        <div class="flexbox">
+            <div class="blank"></div>
+            <div class="stardiv"><img src="/assets/onestar.png" class="starbadge"></div>
+            <div class="usersname">{{currentUser.firstName}} {{currentUser.lastName}}<br></div>
+            <div class="end"><a class="nav-item nav-link" (click)="logout()">Logout</a></div>
+        </div>
+    </div>
+  </nav>
 <div class="jumbotron">
   <div class="container">
       <div class="row">
