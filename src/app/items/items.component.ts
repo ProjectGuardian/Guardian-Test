@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemService} from '../_services/item.service';
 import {Item} from '../_models/item'
+import {User} from '../_models/user';
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -11,7 +12,7 @@ export class ItemsComponent implements OnInit {
 posts: Item[];
 editState:boolean = false;
 itemToEdit: Item;
-
+users: User;
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
