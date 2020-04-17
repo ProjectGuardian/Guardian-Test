@@ -1,0 +1,27 @@
+<div *ngIf="posts?.length > 0;else noItems">
+    <ul *ngFor="let post of posts" class="collection">
+        <li class="collection-item">{{post.post}}<br> 
+        {{post.comments}} <a href="#" class="secondary-content">
+            <i (click)="editItem($event, post)" class="fa fa-pencil">Edit</i>
+            <i *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="fa fa-pencil">Compress</i>
+        </a>
+        <div *ngIf="editState && itemToEdit.id == post.id">
+            <form (ngSubmit)="updateItem(post)">
+                        <div class="input-field">
+                            <input type="text" placeholder="Share your thoughts..." [(ngModel)]="post.post" name="post">
+                        </div>
+                        <div class="input-field">
+                            <input type="text" placeholder="Comment" [(ngModel)]="post.comments" name="comment">
+                        </div>
+                        <input type="submit" value="Update Post" class="btn">
+                        <button (click)="deleteItem($event, post)" class="btn">Delete</button>
+            </form>
+        </div>
+    </li>
+        <li></li>
+    </ul>
+</div>
+<ng-template #noItems>
+    <hr>
+    <h5>There are no posts on the list.</h5>
+</ng-template>

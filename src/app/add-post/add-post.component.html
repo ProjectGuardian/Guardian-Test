@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-content">
+        <form (ngSubmit)="onSubmit()" class="form">
+            <div class="input-field">
+                <input type="text" placeholder="Share your thoughts..." [(ngModel)]="post.post" name="post">
+                <label>POST</label>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Comment" [(ngModel)]="post.comments" name="comment">
+                <label>COMMENTS</label>
+            </div>
+            <input type="submit" value="Post" class="btn">
+        </form>
+    </div>
+</div>

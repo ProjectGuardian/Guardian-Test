@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
+import { Component, OnInit, Input } from '@angular/core';
+import { first, map } from 'rxjs/operators';
 
 import { User } from '../_models/user';
 import { UserService, AuthenticationService } from '../_services';
+
 
 @Component({ templateUrl: 'home.component.html' ,styleUrls:['home.component.less']})
 export class HomeComponent implements OnInit {
@@ -11,13 +12,11 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private authenticationService: AuthenticationService,
-        private userService: UserService
+        private userService: UserService,
+       
     ) {
         this.currentUser = this.authenticationService.currentUserValue;
     }
-
     ngOnInit() {
-        
     }
-
 }
