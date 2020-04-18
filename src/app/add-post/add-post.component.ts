@@ -10,7 +10,6 @@ import {User} from '../_models/user';
 })
 export class AddPostComponent implements OnInit {
   currentUser : User;
-  users = [];
   post: Item = {
     id:'',
     post: '',

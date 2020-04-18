@@ -1,9 +1,9 @@
 <div *ngIf="posts?.length > 0;else noItems">
     <div *ngFor="let post of posts" class="collection">
-        <table border="1">
+        <table>
                 <tr>
                     <td style="width: 500px;"><label class="collection-item">{{post.codename}}</label></td>
-                    <td rowspan="2" style="width: 20px;">
+                    <td style="width: 20px;">
                         <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon">
                         <img src="/assets/compress.png" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="editIcon">
                     </td>

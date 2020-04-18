@@ -33,7 +33,8 @@ import { AddPostComponent } from './add-post/add-post.component';
         AngularFireModule.initializeApp(environment.firebase,'angularfs'),
         AngularFireDatabaseModule,
         AngularFirestoreModule,
-        FormsModule,
+        FormsModule
+        
         
     ],
     declarations: [
