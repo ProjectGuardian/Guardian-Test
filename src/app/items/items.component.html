@@ -5,21 +5,43 @@
                     <td style="width: 500px;"><label class="collection-item">{{post.codename}}</label></td>
                     <td style="width: 20px;">
                         <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon">
+                        <img src="/assets/delete.png" *ngIf="editState && itemToEdit.id == post.id" class="deleteIcon" (click)="deleteItem($event, post)">
                         <img src="/assets/compress.png" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="editIcon">
                     </td>
                 </tr>
                 <tr>
-                    <td id="postmessage"><label class="collection-item">{{post.post}}</label></td>
+                    <td id="postmessage">
+                        <label class="collection-item">{{post.post}}</label>
+                        <hr>
+                        <div class="downarrowCon">
+                            <label (click)="showComments($event, post)">Comments: 
+                                <img src="/assets/compress.png" *ngIf="commentState" (click)="hideComments()" class="editIcon">
+                            </label>
+                        </div>
+                        <div class="commentsection" *ngIf="commentState">
+                            <form (ngSubmit)="onComment()" class="form">
+                                <div class="input-field">
+                                    <textarea name="comments" placeholder="  Share your comments . . ." cols="30" rows="3" [(ngModel)]="post.comments" class="postfield" name="comments">
+                                    </textarea>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" placeholder="    Use a codename" [(ngModel)]="post.codename2" name="codename2"  class="codenamefield">
+                                    <button type="submit" class="btnPost"><img src="/assets/send.png" class="icon"></button>
+                                </div>
+                            </form>
+                            <label class="collection-item"  *ngIf="commentState">{{post.comments}}</label>
+                        </div>
+                        
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="editpost" *ngIf="editState && itemToEdit.id == post.id">
-                            <form (ngSubmit)="updateItem(post)">
-                                        <div class="input-field">
-                                            <input type="text" placeholder="Share your thoughts..." [(ngModel)]="post.post" name="post">
-                                        </div>
-                                        <input type="submit" value="Update" class="btn">
-                                        <button (click)="deleteItem($event, post)" class="btn">Delete</button>
+                            <form (ngSubmit)="updateItem(post)" class="form">
+                                <div class="input-field">
+                                    <textarea name="post" placeholder="  Share your thoughts . . ." cols="30" rows="5" [(ngModel)]="post.post" class="postfield" name="post"></textarea>
+                                </div>
+                                    <input type="submit" value="Update" class="btn">
                             </form>
                         </div>
                     </td>

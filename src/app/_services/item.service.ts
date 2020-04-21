@@ -30,6 +30,9 @@ export class ItemService {
   addItem(post:Item){
     this.itemsCollection.add(post);
   }
+  addComment(comments: Item){
+    this.itemsCollection.add(comments);
+  }
   deleteItem(post:Item){
     this.postDoc = this.afs.doc(`posts/${post.id}`);
     this.postDoc.delete();

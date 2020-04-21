@@ -3,4 +3,5 @@ export interface Item{
     post?:string;
     comments?:string;
     codename?:string;
+    codename2?:string;
   }
