@@ -14,8 +14,9 @@ export class AddPostComponent implements OnInit {
   post: Item = {
     id:'',
     post: '',
-    comments: '',
-    codename:''
+    codename:'',
+    ups:0,
+    downs:0
   }
 
   constructor(private itemService:ItemService ) { }

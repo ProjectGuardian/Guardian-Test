@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemService} from '../_services/item.service';
-import {Item} from '../_models/item'
+import {Item, CommentsItem} from '../_models/item'
 import {User} from '../_models/user';
 @Component({
   selector: 'app-items',
@@ -8,7 +8,7 @@ import {User} from '../_models/user';
   styleUrls: ['./items.component.less']
 })
 export class ItemsComponent implements OnInit {
-
+comments: CommentsItem[];
 posts: Item[];
 editState:boolean = false;
 commentState:boolean = false;
@@ -17,14 +17,22 @@ users: User;
 post: Item = {
   id:'',
   post: '',
-  comments: '',
-  codename2:''
+  ups:0,
+  downs:0
+}
+comment: CommentsItem = {
+  id:'',
+  comment:'',
+  commentcodename:''
 }
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
     this.itemService.getItems().subscribe(posts =>{
       this.posts = posts;
+    })
+    this.itemService.getCommentItems().subscribe(comments=>{
+      this.comments = comments;
     })
   }
   deleteItem(event, post: Item){
@@ -43,20 +51,12 @@ post: Item = {
     this.editState = false;
     this.itemToEdit = null;
   }
-  showComments(event, comments:Item){
-    this.itemService.getItems().subscribe(comments =>{
-      this.posts = comments;
-    })
-    this.commentState = true;
+  ups(post: Item){
+    this.post.ups +=1;
+    this.itemService.addUps(post);
   }
-  hideComments(){
-    this.commentState = false;
-  }
-  onComment(){
-    if(this.post.comments != '' && this.post.codename2 !=''){
-      this.itemService.addComment(this.post);
-      this.post.comments = '';
-      this.post.codename2 = '';
-    }
+  downs(downs: Item){
+    this.post.downs +=1;
+    this.itemService.addDowns(downs);
   }
 }

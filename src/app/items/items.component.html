@@ -1,41 +1,29 @@
 <div *ngIf="posts?.length > 0;else noItems">
     <div *ngFor="let post of posts" class="collection">
-        <table>
+        <table border="1">
                 <tr>
-                    <td style="width: 500px;"><label class="collection-item">{{post.codename}}</label></td>
+                    <td style="width: 500px;" colspan="2"><label class="collection-item">{{post.codename}}</label></td>
                     <td style="width: 20px;">
                         <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td id="postmessage" colspan="2">
+                        <label class="collection-item">{{post.post}}</label>
+                    </td>
+                    <td>
                         <img src="/assets/delete.png" *ngIf="editState && itemToEdit.id == post.id" class="deleteIcon" (click)="deleteItem($event, post)">
                         <img src="/assets/compress.png" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="editIcon">
                     </td>
                 </tr>
                 <tr>
-                    <td id="postmessage">
-                        <label class="collection-item">{{post.post}}</label>
-                        <hr>
-                        <div class="downarrowCon">
-                            <label (click)="showComments($event, post)">Comments: 
-                                <img src="/assets/compress.png" *ngIf="commentState" (click)="hideComments()" class="editIcon">
-                            </label>
-                        </div>
-                        <div class="commentsection" *ngIf="commentState">
-                            <form (ngSubmit)="onComment()" class="form">
-                                <div class="input-field">
-                                    <textarea name="comments" placeholder="  Share your comments . . ." cols="30" rows="3" [(ngModel)]="post.comments" class="postfield" name="comments">
-                                    </textarea>
-                                </div>
-                                <div class="input-field">
-                                    <input type="text" placeholder="    Use a codename" [(ngModel)]="post.codename2" name="codename2"  class="codenamefield">
-                                    <button type="submit" class="btnPost"><img src="/assets/send.png" class="icon"></button>
-                                </div>
-                            </form>
-                            <label class="collection-item"  *ngIf="commentState">{{post.comments}}</label>
-                        </div>
-                        
-                    </td>
+                    <td><img src="/assets/ups.png" class="counterIcon" (click)="ups(post)">{{post.ups}}</td>
+                    <td><img src="/assets/downs.png" class="counterIcon" (click)="downs(post)">{{post.downs}}</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="3">
                         <div class="editpost" *ngIf="editState && itemToEdit.id == post.id">
                             <form (ngSubmit)="updateItem(post)" class="form">
                                 <div class="input-field">
@@ -46,10 +34,17 @@
                         </div>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="3">Comments:</td>
+                </tr>
+                <tr>
+                    <td colspan="3" *ngFor="let comment of comments">{{comment.comment}}</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                    </td>
+                </tr>
         </table>
-        
-    
-
     </div>
 </div>
 <ng-template #noItems>
