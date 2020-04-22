@@ -1,0 +1,147 @@
+html {
+    background-color: black;
+    scroll-behavior: smooth;
+    margin: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+body {
+    font-family: 'Istok Web', sans-serif;
+    background: url("/assets/image/switchless.jpg") no-repeat #000;
+    background-size: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+.hero {
+    position:relative; 
+    text-align: center; 
+    overflow: hidden; 
+    color: #fcfcfc; 
+}
+.hero h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 5.4em;
+    margin:20px;
+    margin-bottom: -10px; 
+    text-shadow:0 0 12px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing:-1px;
+}
+.hero p {
+    font-family: 'Abel', sans-serif;
+    text-transform: uppercase; 
+    color: gold; 
+    letter-spacing: 6px;
+    text-shadow:0 0 12px rgba(0, 0, 0, 0.5);
+    font-size: 1.2em;
+    padding-top: 0px;
+}
+.hero-wrap {
+    padding: 3.5em 10px;
+}
+.hero p.intro {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 3em;
+    margin-bottom:-20px;
+    margin-top: 5px;
+}
+.hero p.year {
+    color: #fff; 
+    letter-spacing: 20px; 
+    font-size: 34px; 
+    margin-top: 2px;
+}
+.hero p.year i {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+
+@media screen and (min-width: 981px) and (max-width: 1099px) {
+  .hero p.intro {
+      font-size: 28px;
+    }
+  .hero p.year {
+      margin: 5px 0 10px;
+    }
+
+}
+
+@media screen and (max-width: 980px) {
+  .hero p.intro {
+      font-size: 24px;
+    }
+  .hero h1 {
+      font-size: 3em; 
+      margin: 15px 0;
+    }
+  .hero p {
+      font-size: 1em;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+  .hero h1 {
+      font-size: 2.15em;
+      letter-spacing: 0;
+      margin:0; }
+  .hero p.intro {
+      font-size: 1.15em;
+      margin-bottom: -10px;
+    }
+  .round-details {
+      font-size: 90%;
+    }
+  .hero-wrap {
+      padding: 2.5em;
+    }
+  .hero p.year {
+      margin: 5px 0 10px; 
+      font-size: 18px;
+    }
+
+}
