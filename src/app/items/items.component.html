@@ -38,10 +38,27 @@
                     <td colspan="3">Comments:</td>
                 </tr>
                 <tr>
-                    <td colspan="3" *ngFor="let comment of comments">{{comment.comment}}</td>
+                    <td colspan="3">
+                        <div *ngFor="let comment of comments" class="collection">
+                        <label class="collection-item" *ngIf="comment.postid == post.id">
+                            {{comment.comment}} {{comment.id}}
+                            <button class="btnPost" (click)="deleteComment($event, comment)">Delete</button>
+                        </label><br>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="3">
+                        <form (ngSubmit)="onSubmit()" class="form">
+                            <div class="input-field">
+                                <textarea name="comment" placeholder="  Share your comment . . ." cols="30" rows="10" [(ngModel)]="comment.comment" class="commentfield" name="comment">
+                                </textarea>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" placeholder="    Use a codename" [(ngModel)]="comment.commentcodename" name="codename"  class="codenamefield">
+                                <button type="submit" class="btnPost"><img src="/assets/send.png" class="icon"></button>
+                            </div>
+                        </form>
                     </td>
                 </tr>
         </table>

@@ -13,17 +13,20 @@ posts: Item[];
 editState:boolean = false;
 commentState:boolean = false;
 itemToEdit: Item;
+commentToEdit: CommentsItem;
 users: User;
 post: Item = {
   id:'',
   post: '',
   ups:0,
-  downs:0
+  downs:0,
+  commentid:''
 }
 comment: CommentsItem = {
   id:'',
   comment:'',
-  commentcodename:''
+  commentcodename:'',
+  postid:''
 }
   constructor(private itemService: ItemService) { }
 
@@ -58,5 +61,16 @@ comment: CommentsItem = {
   downs(downs: Item){
     this.post.downs +=1;
     this.itemService.addDowns(downs);
+  }
+  //comment section
+  onSubmit(){
+    if(this.comment.comment != '' && this.comment.commentcodename !=''){
+      this.itemService.addComment(this.comment);
+      this.comment.comment = '';
+      this.comment.commentcodename = '';
+    }
+  }
+  deleteComment(event, comment: CommentsItem){
+    this.itemService.deleteComm(comment);
   }
 }
