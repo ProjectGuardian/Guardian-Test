@@ -1,6 +1,6 @@
 <div *ngIf="posts?.length > 0;else noItems">
     <div *ngFor="let post of posts" class="collection">
-        <table border="1">
+        <table>
                 <tr>
                     <td style="width: 500px;" colspan="2"><label class="collection-item">{{post.codename}}</label></td>
                     <td style="width: 20px;">
@@ -18,8 +18,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="/assets/ups.png" class="counterIcon" (click)="ups(post)">{{post.ups}}</td>
-                    <td><img src="/assets/downs.png" class="counterIcon" (click)="downs(post)">{{post.downs}}</td>
+                    <td><img src="/assets/ups.png" class="counterIcon" (click)="ups(post)">{{post.ups}}
+                        <img src="/assets/downs.png" class="counterIcon" (click)="downs(post)">{{post.downs}}</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -38,7 +38,7 @@
                     <td colspan="3">Comments:</td>
                 </tr>
                 <tr>
-                    <td colspan="3">
+                    <td colspan="1">
                         <div *ngFor="let comment of comments" class="collection">
                         <label class="collection-item" *ngIf="comment.postid == post.id">
                             {{comment.comment}} {{comment.id}}
