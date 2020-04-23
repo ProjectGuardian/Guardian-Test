@@ -5,12 +5,13 @@
       </button>
     <div class="navbar-nav">
         <div class="flexbox">
+           <div class="searchBar"><input type="text" placeholder="Wanna know something?" class="searchBar"></div>
             <div class="blank"></div>
-            <div class="stardiv"><img src="/assets/onestar.png" class="starbadge"></div>
+            <div class="usersname" (click)="home()"><img src="/assets/HomeIcon.png" class="homeIcon"></div>
+            <div class="usersname" (click)="tournamentPage()"><img src="/assets/TrophyIcon.png" class="trophyIcon"></div>
+            <div class="stardiv"><img src="/assets/rank-noob.png" class="starbadge"></div>
             <div class="usersname">{{currentUser.firstName}} {{currentUser.lastName}}<br></div>
-            <div class="usersname" (click)="home()">Home</div>
-            <div class="usersname" (click)="tournamentPage()">Tournament</div>
-            <div class="end"><a class="nav-item nav-link" (click)="logout()">Logout</a></div>
+            <div class="end"><a class="nav-item nav-link" (click)="logout()"><img src="/assets/logoutIcon.png" class="logoutIcon"></a></div>
         </div>
     </div>
   </nav>
