@@ -42,6 +42,7 @@
                         <div class="container"  *ngFor="let comment of comments">
                             <div class="collection" *ngIf="comment.postid == post.id">
                                 <label class="collection-item">
+                                    {{comment.commentcodename}}<br>
                                     {{comment.comment}}
                                     <button class="btnPost" (click)="deleteComment($event, comment)">Delete</button>
                                 </label><br>
