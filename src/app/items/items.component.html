@@ -39,12 +39,15 @@
                 </tr>
                 <tr>
                     <td colspan="1">
-                        <div *ngFor="let comment of comments" class="collection">
-                        <label class="collection-item" *ngIf="comment.postid == post.id">
-                            {{comment.comment}} {{comment.id}}
-                            <button class="btnPost" (click)="deleteComment($event, comment)">Delete</button>
-                        </label><br>
+                        <div class="container"  *ngFor="let comment of comments">
+                            <div class="collection" *ngIf="comment.postid == post.id">
+                                <label class="collection-item">
+                                    {{comment.comment}}
+                                    <button class="btnPost" (click)="deleteComment($event, comment)">Delete</button>
+                                </label><br>
+                                </div>
                         </div>
+                        
                     </td>
                 </tr>
                 <tr>
