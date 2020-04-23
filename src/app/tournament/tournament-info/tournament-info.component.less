@@ -1,0 +1,72 @@
+html {
+    background-color: black;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 0px;
+    margin-top: -10px;
+    scroll-behavior: smooth;
+    margin: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    }
+    body {
+    margin: 0px;
+    padding: 0px;
+    border: 5px;
+    border-color: gold;
+    border-style: solid;
+    border-width: 8px;
+    }
+    .display h1 {
+        color: gold;
+        text-align: center;
+    }
+    img {
+      width: 98%;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      padding: 10px;
+    }
+    .skill-main-grid {
+        text-align: center;
+        border-style: hidden;
+        background-color: black;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .skill-grid1, .skill-grid2, .skill-grid3, .skill-grid4 {
+        border-color: gold;
+        border-style: solid;
+        margin:10px;
+    }
+    .skill-main-grid p {
+        color:white;
+        text-align: justify;
+        font-size: 18px;
+        padding: 10px;
+    }
+    .skill-grid1, .skill-grid2,.skill-grid3, .skill-grid4 {
+        color: white;
+        text-align: left;
+    }
+    .skill-main-grid h3 {
+        color: gold;
+        text-align: center;
+    }
+    li {
+        margin: 1em;
+    }
+    /*Moibile Responsive*/
+    @media screen and (max-width: 812px){
+        .skill-main-grid {
+            grid-template-columns: none;
+            text-align: center;
+            position: sticky;
+        }
+    }
