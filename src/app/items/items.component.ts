@@ -63,8 +63,9 @@ comment: CommentsItem = {
     this.itemService.addDowns(downs);
   }
   //comment section
-  onSubmit(){
+  onSubmit(id){
     if(this.comment.comment != '' && this.comment.commentcodename !=''){
+      this.comment.postid = id;
       this.itemService.addComment(this.comment);
       this.comment.comment = '';
       this.comment.commentcodename = '';
