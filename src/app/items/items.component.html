@@ -53,13 +53,14 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <form (ngSubmit)="onSubmit(post.id)" class="form">
+                        <form (ngSubmit)="onSubmit(post.id, currentUser.firstName)" class="form">
                             <div class="input-field">
                                 <textarea name="comment" placeholder="  Share your comment . . ." cols="30" rows="10" [(ngModel)]="comment.comment" class="commentfield" name="comment">
                                 </textarea>
                             </div>
                             <div class="input-field">
-                                <input type="text" placeholder="    Use a codename" [(ngModel)]="comment.commentcodename" name="codename"  class="codenamefield">
+                                <!-- <input type="text" placeholder="    Use a codename" [(ngModel)]="comment.commentcodename" name="codename"  class="codenamefield"> -->
+                                <input name="userName" id="userName" ngModel type="hidden" value={{this.currentUser.firstName}} [(ngModel)]="comment.commentcodename">
                                 <input name="postID" id="postid" ngModel type="hidden" value={{this.post.id}} [(ngModel)]="comment.postid">
                                 <button type="submit" class="btnPost"><img src="/assets/send.png" class="icon"></button>
                             </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ItemService} from '../_services/item.service';
 import {Item, CommentsItem} from '../_models/item'
 import {User} from '../_models/user';
+import { AuthenticationService } from '../_services/authentication.service';
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -14,7 +15,7 @@ editState:boolean = false;
 commentState:boolean = false;
 itemToEdit: Item;
 commentToEdit: CommentsItem;
-users: User;
+currentUser:User;
 post: Item = {
   id:'',
   post: '',
@@ -28,7 +29,9 @@ comment: CommentsItem = {
   commentcodename:'',
   postid:''
 }
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService,private authenticationService: AuthenticationService) { 
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+  }
 
   ngOnInit(): void {
     this.itemService.getItems().subscribe(posts =>{
@@ -63,8 +66,9 @@ comment: CommentsItem = {
     this.itemService.addDowns(downs);
   }
   //comment section
-  onSubmit(id){
-    if(this.comment.comment != '' && this.comment.commentcodename !=''){
+  onSubmit(id,name){
+    if(this.comment.comment != ''){
+      this.comment.commentcodename = name;
       this.comment.postid = id;
       this.itemService.addComment(this.comment);
       this.comment.comment = '';
