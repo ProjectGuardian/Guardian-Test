@@ -18,8 +18,8 @@
                     </td>
                 </tr>
                 <tr>
-                   <td><img src="/assets/ups.png" class="counterIcon" (click)="ups(post)">{{post.ups}}
-                        <img src="/assets/downs.png" class="counterIcon" (click)="downs(post)">{{post.downs}}</td>
+                   <td><div class="upBTN">{{post.ups}}<img src="/assets/ups.png" class="counterIcon" (click)="ups(post)"><label class="likeID">Like</label></div>
+                        <div class="downBTN">{{post.downs}}<img src="/assets/downs.png" class="counterIcon" (click)="downs(post)"><label class="unlikeID">Sorry..</label></div></td>
                     <td></td>
                 </tr>
                 <tr>
