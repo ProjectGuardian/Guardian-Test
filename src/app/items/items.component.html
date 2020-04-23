@@ -1,6 +1,6 @@
 <div *ngIf="posts?.length > 0;else noItems">
     <div *ngFor="let post of posts" class="collection">
-        <table>
+        <table border="1">
                 <tr>
                     <td style="width: 500px;" colspan="2"><label class="collection-item">{{post.codename}}</label></td>
                     <td style="width: 20px;">
@@ -18,8 +18,8 @@
                     </td>
                 </tr>
                 <tr>
-                   <td><div class="upBTN">{{post.ups}}<img src="/assets/ups.png" class="counterIcon" (click)="ups(post)"><label class="likeID">Like</label></div>
-                        <div class="downBTN">{{post.downs}}<img src="/assets/downs.png" class="counterIcon" (click)="downs(post)"><label class="unlikeID">Sorry..</label></div></td>
+                   <td><div class="upBTN">{{post.ups}}<img src="/assets/ups.png" class="counterIcon" (click)="ups(post)"><label class="likeID">Nice!</label></div>
+                        <div class="downBTN">{{post.downs}}<img src="/assets/downs.png" class="counterIcon" (click)="downs(post)"><label class="unlikeID">Boo!</label></div></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -59,7 +59,6 @@
                                 </textarea>
                             </div>
                             <div class="input-field">
-                                <!-- <input type="text" placeholder="    Use a codename" [(ngModel)]="comment.commentcodename" name="codename"  class="codenamefield"> -->
                                 <input name="userName" id="userName" ngModel type="hidden" value={{this.currentUser.firstName}} [(ngModel)]="comment.commentcodename">
                                 <input name="postID" id="postid" ngModel type="hidden" value={{this.post.id}} [(ngModel)]="comment.postid">
                                 <button type="submit" class="btnPost"><img src="/assets/send.png" class="icon"></button>
