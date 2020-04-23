@@ -18,7 +18,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="/assets/ups.png" class="counterIcon" (click)="ups(post)">{{post.ups}}
+                   <td><img src="/assets/ups.png" class="counterIcon" (click)="ups(post)">{{post.ups}}
                         <img src="/assets/downs.png" class="counterIcon" (click)="downs(post)">{{post.downs}}</td>
                     <td></td>
                 </tr>
@@ -43,7 +43,7 @@
                             <div class="collection" *ngIf="comment.postid == post.id">
                                 <label class="collection-item">
                                     {{comment.comment}}
-                                    <button class="btnPost" (click)="deleteComment($event, comment)">Delete</button>
+                                    <button class="btnDelete" (click)="deleteComment($event, comment)">Delete</button>
                                 </label><br>
                                 </div>
                         </div>
