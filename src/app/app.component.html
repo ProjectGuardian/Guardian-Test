@@ -8,6 +8,8 @@
             <div class="blank"></div>
             <div class="stardiv"><img src="/assets/onestar.png" class="starbadge"></div>
             <div class="usersname">{{currentUser.firstName}} {{currentUser.lastName}}<br></div>
+            <div class="usersname" (click)="home()">Home</div>
+            <div class="usersname" (click)="tournamentPage()">Tournament</div>
             <div class="end"><a class="nav-item nav-link" (click)="logout()">Logout</a></div>
         </div>
     </div>

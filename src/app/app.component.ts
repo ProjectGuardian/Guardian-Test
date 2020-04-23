@@ -25,4 +25,10 @@ export class AppComponent {
         this.authenticationService.logout();
         this.router.navigate(['/login']);
     }
+    tournamentPage(){
+        this.router.navigate(['/tournament-home']);
+    }
+    home(){
+        this.router.navigate(['']);
+    }
 }

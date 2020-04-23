@@ -25,6 +25,7 @@ import { ItemsComponent } from './items/items.component';
 import {ItemService} from './_services/item.service';
 import { AddPostComponent } from './add-post/add-post.component';
 import { AboutComponent } from './tournament/about/about.component';
+import { TournamentHomeComponent } from './tournament/tournament-home/tournament-home.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { AboutComponent } from './tournament/about/about.component';
         ItemsComponent,
         AddPostComponent,
         AboutComponent,
+        TournamentHomeComponent,
 
        
     ],
