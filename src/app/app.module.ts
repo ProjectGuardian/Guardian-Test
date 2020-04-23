@@ -26,6 +26,9 @@ import {ItemService} from './_services/item.service';
 import { AddPostComponent } from './add-post/add-post.component';
 import { AboutComponent } from './tournament/about/about.component';
 import { TournamentHomeComponent } from './tournament/tournament-home/tournament-home.component';
+import { TournamentFeatureComponent } from './tournament-feature/tournament-feature.component';
+import { TournamentInfoComponent } from './tournament-info/tournament-info.component';
+import { TournamentFooterComponent } from './tournament-footer/tournament-footer.component';
 
 
 @NgModule({
@@ -52,6 +55,9 @@ import { TournamentHomeComponent } from './tournament/tournament-home/tournament
         AddPostComponent,
         AboutComponent,
         TournamentHomeComponent,
+        TournamentFeatureComponent,
+        TournamentInfoComponent,
+        TournamentFooterComponent,
 
        
     ],
