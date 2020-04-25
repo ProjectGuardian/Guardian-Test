@@ -29,6 +29,7 @@ import { TournamentHomeComponent } from './tournament/tournament-home/tournament
 import { TournamentFeatureComponent } from './tournament/tournament-feature/tournament-feature.component';
 import { TournamentInfoComponent } from './tournament/tournament-info/tournament-info.component';
 import { TournamentFooterComponent } from './tournament/tournament-footer/tournament-footer.component';
+import { NewsComponent } from './tournament/news/news.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { TournamentFooterComponent } from './tournament/tournament-footer/tourna
         TournamentFeatureComponent,
         TournamentInfoComponent,
         TournamentFooterComponent,
+        NewsComponent,
 
        
     ],
