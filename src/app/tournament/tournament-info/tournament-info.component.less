@@ -33,7 +33,7 @@ html {
         display: grid;
         padding: 10px;
     }
-    .skill-main-grid {
+    .info-main-grid {
         text-align: center;
         border-style: hidden;
         background-color: black;
@@ -41,22 +41,21 @@ html {
         grid-template-columns: repeat(2, 1fr);
         margin-top: 5px;
     }
-    .skill-grid1, .skill-grid2, .skill-grid3, .skill-grid4 {
+    .info-grid1, .info-grid2, .info-grid3, .info-grid4 {
         border-color: gold;
         border-style: solid;
+        color: white;
+        text-align: left;
         margin:10px;
     }
-    .skill-main-grid p {
+    .info-main-grid p {
         color:white;
         text-align: justify;
         font-size: 18px;
         padding: 10px;
     }
-    .skill-grid1, .skill-grid2,.skill-grid3, .skill-grid4 {
-        color: white;
-        text-align: left;
-    }
-    .skill-main-grid h3 {
+
+    .info-main-grid h3 {
         color: gold;
         text-align: center;
     }
@@ -65,7 +64,7 @@ html {
     }
     /*Moibile Responsive*/
     @media screen and (max-width: 812px){
-        .skill-main-grid {
+        .info-main-grid {
             grid-template-columns: none;
             text-align: center;
             position: sticky;
