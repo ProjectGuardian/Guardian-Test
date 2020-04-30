@@ -16,6 +16,7 @@ commentState:boolean = false;
 itemToEdit: Item;
 commentToEdit: CommentsItem;
 currentUser:User;
+clicked:boolean = false;
 post: Item = {
   id:'',
   post: '',
@@ -57,14 +58,25 @@ comment: CommentsItem = {
     this.editState = false;
     this.itemToEdit = null;
   }
-  ups(post: Item){
-    this.post.ups +=1;
-    this.itemService.addUps(post);
+  upsDowns(post: Item){
+    if(this.clicked == false){
+    this.clicked = true;
+    post.ups +=1;
+    console.log("Ups: "+post.ups);
+    console.log("Downs: "+post.downs);
+    this.itemService.updateItem(post);
   }
-  downs(downs: Item){
-    this.post.downs +=1;
-    this.itemService.addDowns(downs);
   }
+  upsDowns2(post: Item){
+    if(this.clicked == false){
+      this.clicked = true;
+    post.downs +=1;
+    console.log("Ups: "+post.ups);
+    console.log("Downs: "+post.downs);
+    this.itemService.updateItem(post);
+    }
+  }
+ 
   //comment section
   onSubmit(id,name){
     if(this.comment.comment != ''){

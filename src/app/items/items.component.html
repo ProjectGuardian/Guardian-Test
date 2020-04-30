@@ -18,8 +18,15 @@
                     </td>
                 </tr>
                 <tr>
-                   <td><div class="upBTN">{{post.ups}}<img src="/assets/ups.png" class="counterIcon" (click)="ups(post)"><label class="likeID">Nice!</label></div>
-                        <div class="downBTN">{{post.downs}}<img src="/assets/downs.png" class="counterIcon" (click)="downs(post)"><label class="unlikeID">Boo!</label></div>
+                   <td>
+                    <form (ngSubmit)="upsDowns(post)" class="form">
+                        <label><img src="/assets/ups.png" class="counterIcon">{{post.ups}} <input type="submit" value="" class="btn" style="display: none;"></label>
+                        <input name="upsBtn" type="hidden" id="upsBtn" [(ngModel)]="post.ups" value={{post.ups}}>
+                    </form>
+                    <form (ngSubmit)="upsDowns2(post)" class="form">
+                    <label><img src="/assets/downs.png" class="counterIcon">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
+                    <input name="downsBtn" type="hidden" id="downsBtn" [(ngModel)]="post.downs" value={{post.downs}}>
+                    </form>
                     </td>
                 </tr>
                 <tr>
