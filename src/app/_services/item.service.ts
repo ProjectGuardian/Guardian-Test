@@ -21,7 +21,6 @@ export class ItemService {
   postDoc3: AngularFirestoreDocument<React>;
 
   constructor(public afs: AngularFirestore) { 
-    // this.posts = this.afs.collection('posts').valueChanges();
     this.itemsCollection = this.afs.collection('posts', ref => ref.orderBy('timeDate', 'desc'));
     this.posts = this.itemsCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a=>{
@@ -30,7 +29,7 @@ export class ItemService {
         return data;
       });
     }));
-    this.itemsCollection2 = this.afs.collection('comments');
+    this.itemsCollection2 = this.afs.collection('comments', ref2 => ref2.orderBy('ctimeDate', 'desc'));
     this.comments = this.itemsCollection2.snapshotChanges().pipe(map(changes2 => {
       return changes2.map(aa=>{
         const data2 = aa.payload.doc.data() as CommentsItem

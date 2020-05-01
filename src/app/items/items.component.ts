@@ -17,6 +17,7 @@ commentState:boolean = false;
 itemToEdit: Item;
 commentToEdit: CommentsItem;
 currentUser:User;
+cTimeDate =  Date();
 clicked:boolean = false;
 post: Item = {
   id:'',
@@ -31,7 +32,8 @@ comment: CommentsItem = {
   id:'',
   comment:'',
   commentcodename:'',
-  postid:''
+  postid:'',
+  ctimeDate:''
 }
 react: React={
   id:'',
@@ -71,6 +73,7 @@ react: React={
   //comment section
   onSubmit(id,name){
     if(this.comment.comment != ''){
+      this.comment.ctimeDate = this.cTimeDate;
       this.comment.commentcodename = name;
       this.comment.postid = id;
       this.itemService.addComment(this.comment);
