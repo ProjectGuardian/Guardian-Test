@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {Item, CommentsItem} from '../_models/item';
+import {Item, CommentsItem, React} from '../_models/item';
 import { Observable } from 'rxjs';
 import { map } from "rxjs/operators";
 
@@ -16,9 +16,13 @@ export class ItemService {
   comments: Observable<CommentsItem[]>;
   postDoc2: AngularFirestoreDocument<CommentsItem>;
 
+  itemsCollection3: AngularFirestoreCollection<React>;
+  reacts: Observable<React[]>;
+  postDoc3: AngularFirestoreDocument<React>;
+
   constructor(public afs: AngularFirestore) { 
     // this.posts = this.afs.collection('posts').valueChanges();
-    this.itemsCollection = this.afs.collection('posts');
+    this.itemsCollection = this.afs.collection('posts', ref => ref.orderBy('timeDate', 'desc'));
     this.posts = this.itemsCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a=>{
         const data = a.payload.doc.data() as Item
@@ -32,6 +36,14 @@ export class ItemService {
         const data2 = aa.payload.doc.data() as CommentsItem
         data2.id = aa.payload.doc.id;
         return data2;
+      });
+    }));
+    this.itemsCollection3 = this.afs.collection('reacts');
+    this.reacts = this.itemsCollection3.snapshotChanges().pipe(map(changes3 => {
+      return changes3.map(aaa=>{
+        const data3 = aaa.payload.doc.data() as React
+        data3.id = aaa.payload.doc.id;
+        return data3;
       });
     }));
   }
@@ -49,14 +61,7 @@ export class ItemService {
     this.postDoc = this.afs.doc(`posts/${post.id}`);
     this.postDoc.update(post);
   }
-  addUps(post: Item ){
-    this.postDoc = this.afs.doc(`posts/${post.id}`);
-    this.postDoc.update(post);
-  }
-  addDowns(post: Item){
-    this.postDoc = this.afs.doc(`posts/${post.id}`);
-    this.postDoc.update(post);
-  }
+  
   //comment section
   getCommentItems(){
     return this.comments;
@@ -67,6 +72,21 @@ export class ItemService {
   deleteComm(comment:CommentsItem){
     this.postDoc2 = this.afs.doc(`comments/${comment.id}`);
     this.postDoc2.delete();
+  }
+  //reacts
+  getReactItems(){
+    return this.reacts;
+  }
+  addUps(post: Item ){
+    this.postDoc = this.afs.doc(`posts/${post.id}`);
+    this.postDoc.update(post);
+  }
+  addDowns(post: Item){
+    this.postDoc = this.afs.doc(`posts/${post.id}`);
+    this.postDoc.update(post);
+  }
+  updateReact(react:React){
+    this.itemsCollection3.add(react);
   }
 } 
 

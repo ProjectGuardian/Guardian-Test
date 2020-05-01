@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemService} from '../_services/item.service';
-import {Item, CommentsItem} from '../_models/item'
+import {Item, CommentsItem,React} from '../_models/item'
 import {User} from '../_models/user';
 import { AuthenticationService } from '../_services/authentication.service';
 @Component({
@@ -11,6 +11,7 @@ import { AuthenticationService } from '../_services/authentication.service';
 export class ItemsComponent implements OnInit {
 comments: CommentsItem[];
 posts: Item[];
+reacts:React[];
 editState:boolean = false;
 commentState:boolean = false;
 itemToEdit: Item;
@@ -22,13 +23,20 @@ post: Item = {
   post: '',
   ups:0,
   downs:0,
-  commentid:''
+  commentid:'',
+  userUDid:[],
+  timeDate:''
 }
 comment: CommentsItem = {
   id:'',
   comment:'',
   commentcodename:'',
   postid:''
+}
+react: React={
+  id:'',
+  userid:'',
+  idpost:''
 }
   constructor(private itemService: ItemService,private authenticationService: AuthenticationService) { 
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
@@ -58,24 +66,7 @@ comment: CommentsItem = {
     this.editState = false;
     this.itemToEdit = null;
   }
-  upsDowns(post: Item){
-    if(this.clicked == false){
-    this.clicked = true;
-    post.ups +=1;
-    console.log("Ups: "+post.ups);
-    console.log("Downs: "+post.downs);
-    this.itemService.updateItem(post);
-  }
-  }
-  upsDowns2(post: Item){
-    if(this.clicked == false){
-      this.clicked = true;
-    post.downs +=1;
-    console.log("Ups: "+post.ups);
-    console.log("Downs: "+post.downs);
-    this.itemService.updateItem(post);
-    }
-  }
+  
  
   //comment section
   onSubmit(id,name){
@@ -89,5 +80,24 @@ comment: CommentsItem = {
   }
   deleteComment(event, comment: CommentsItem){
     this.itemService.deleteComm(comment);
+  }
+  //Reacts
+  upsDowns(post: Item){
+    if(this.clicked == false){
+    this.clicked = true;
+    post.ups +=1;
+    console.log("Ups: "+post.ups);
+    console.log("Downs: "+post.downs);
+    this.itemService.updateItem(post);
+  }
+}
+  upsDowns2(post: Item){
+    if(this.clicked == false){
+      this.clicked = true;
+    post.downs +=1;
+    console.log("Ups: "+post.ups);
+    console.log("Downs: "+post.downs);
+    this.itemService.updateItem(post);
+    }
   }
 }

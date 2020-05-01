@@ -2,7 +2,7 @@
     <div *ngFor="let post of posts" class="collection">
         <table>
                 <tr>
-                    <td style="width: 500px;" colspan="2"><label class="collection-item">{{post.codename}}</label></td>
+                    <td style="width: 500px;" colspan="2"><label class="collection-item">{{post.codename}}<br><label class="timeDate">{{post.timeDate.seconds*1000 | date: 'h:mm a MMM d y EEE'}}</label></label></td>
                     <td style="width: 20px;">
                         <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon">
                         
@@ -24,7 +24,8 @@
                         <input name="upsBtn" type="hidden" id="upsBtn" [(ngModel)]="post.ups" value={{post.ups}}>
                     </form>
                     <form (ngSubmit)="upsDowns2(post)" class="form">
-                    <label><img src="/assets/downs.png" class="counterIcon">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
+                    <label>
+                        <img src="/assets/downs.png" class="counterIcon">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
                     <input name="downsBtn" type="hidden" id="downsBtn" [(ngModel)]="post.downs" value={{post.downs}}>
                     </form>
                     </td>
@@ -66,10 +67,6 @@
                                 </textarea><button type="submit" class="btnPost"><img src="/assets/send.png" class="icon"></button>
                                 <input name="userName" id="userName" ngModel type="hidden" value={{this.currentUser.firstName}} [(ngModel)]="comment.commentcodename">
                                 <input name="postID" id="postid" ngModel type="hidden" value={{this.post.id}} [(ngModel)]="comment.postid">
-                                
-                            </div>
-                            <div class="input-field">
-                                
                                 
                             </div>
                         </form>

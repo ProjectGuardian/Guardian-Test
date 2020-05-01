@@ -5,6 +5,8 @@ export interface Item{
     ups?:number;
     downs?:number;
     commentid?:any;
+    userUDid?:[];
+    timeDate?:any;
   }
   export interface CommentsItem{
     id:any;
@@ -12,3 +14,8 @@ export interface Item{
     commentcodename?:string;
     postid:any;
   }
+  export interface React {
+    id: any;
+    userid: any;
+    idpost:any;
+}
