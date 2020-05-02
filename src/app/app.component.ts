@@ -30,4 +30,7 @@ export class AppComponent {
     home(){
         this.router.navigate(['']);
     }
+    blogPage(){
+        this.router.navigate(['/update-page']);
+    }
 }
