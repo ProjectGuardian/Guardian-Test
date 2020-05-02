@@ -30,6 +30,7 @@ import { TournamentFeatureComponent } from './tournament/tournament-feature/tour
 import { TournamentInfoComponent } from './tournament/tournament-info/tournament-info.component';
 import { TournamentFooterComponent } from './tournament/tournament-footer/tournament-footer.component';
 import { NewsComponent } from './tournament/news/news.component';
+import { UpdatePageComponent } from './announcement/update-page/update-page.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { NewsComponent } from './tournament/news/news.component';
         TournamentInfoComponent,
         TournamentFooterComponent,
         NewsComponent,
+        UpdatePageComponent,
 
        
     ],
