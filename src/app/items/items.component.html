@@ -1,78 +1,60 @@
 <div *ngIf="posts?.length > 0;else noItems">
     <div *ngFor="let post of posts" class="collection">
-        <table>
-                <tr>
-                    <td style="width: 500px;" colspan="2"><label class="collection-item">{{post.codename}}<br><label class="timeDate">{{post.timeDate.seconds*1000 | date: 'h:mm a MMM d y EEE'}}</label></label></td>
-                    <td style="width: 20px;">
-                        <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon">
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td id="postmessage" colspan="2">
-                        <label class="collection-item">{{post.post}}</label>
-                    </td>
-                    <td>
-                        <img src="/assets/delete.png" *ngIf="editState && itemToEdit.id == post.id" class="deleteIcon" (click)="deleteItem($event, post)">
-                        <img src="/assets/compress.png" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="editIcon">
-                    </td>
-                </tr>
-                <tr>
-                   <td>
-                    <form (ngSubmit)="upsDowns(post)" class="form">
-                        <label><img src="/assets/ups.png" class="counterIcon">{{post.ups}} <input type="submit" value="" class="btn" style="display: none;"></label>
-                        <input name="upsBtn" type="hidden" id="upsBtn" [(ngModel)]="post.ups" value={{post.ups}}>
-                    </form>
-                    <form (ngSubmit)="upsDowns2(post)" class="form">
-                    <label>
-                        <img src="/assets/downs.png" class="counterIcon">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
-                    <input name="downsBtn" type="hidden" id="downsBtn" [(ngModel)]="post.downs" value={{post.downs}}>
-                    </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" *ngIf="editState && itemToEdit.id == post.id">
-                        <div class="editpost">
-                            <form (ngSubmit)="updateItem(post)" class="form">
-                                <div class="input-field">
-                                    <textarea name="post" placeholder="  Share your thoughts . . ." cols="30" rows="5" [(ngModel)]="post.post" class="postfield" name="post"></textarea>
-                                </div>
-                                    <input type="submit" value="Update" class="btn">
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3"><hr>Comments:</td>
-                </tr>
-                <tr>
-                    <td colspan="1">
-                        <div class="container"  *ngFor="let comment of comments">
-                            <div class="collection" *ngIf="comment.postid == post.id">
-                                <label class="collection-item">
-                                    {{comment.commentcodename}}<br>
-                                    {{comment.comment}}
-                                    <button class="btnDelete" (click)="deleteComment($event, comment)">Delete</button>
-                                </label><br>
-                                </div>
-                        </div>
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <form (ngSubmit)="onSubmit(post.id, currentUser.firstName)" class="form">
-                            <div class="input-field">
-                                <textarea name="comment" placeholder="  Share your comment . . ." cols="30" rows="10" [(ngModel)]="comment.comment" class="commentfield" name="comment">
-                                </textarea><button type="submit" class="btnPost"><img src="/assets/send.png" class="icon"></button>
-                                <input name="userName" id="userName" ngModel type="hidden" value={{this.currentUser.firstName}} [(ngModel)]="comment.commentcodename">
-                                <input name="postID" id="postid" ngModel type="hidden" value={{this.post.id}} [(ngModel)]="comment.postid">
-                                
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-        </table>
+        <div class="main-container">
+        <div class="post-container">
+            <label class="collection-item">{{post.codename}}
+                <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon">
+                <img src="/assets/delete.png" *ngIf="editState && itemToEdit.id == post.id" class="deleteIcon" (click)="deleteItem($event, post)">
+                <img src="/assets/compress.png" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="editIcon"><br>
+                <label class="timeDate">{{post.timeDate.seconds*1000 | date: 'h:mm a MMM d y EEE'}}</label>
+            </label>
+        </div>
+        <div class="post-content-container">
+            <label class="collection-item">{{post.post}}</label>
+        </div>
+        <div class="reaction-container">
+            <form (ngSubmit)="upsDowns(post)" class="form">
+                <label><img src="/assets/ups.png" class="counterIcon">{{post.ups}} <input type="submit" value="" class="btn" style="display: none;"></label>
+                <input name="upsBtn" type="hidden" id="upsBtn" [(ngModel)]="post.ups" value={{post.ups}}>
+            </form>
+            <form (ngSubmit)="upsDowns2(post)" class="form">
+            <label>
+                <img src="/assets/downs.png" class="counterIcon">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
+            <input name="downsBtn" type="hidden" id="downsBtn" [(ngModel)]="post.downs" value={{post.downs}}>
+            </form>
+        </div>
+        <div class="hidden-edit-container" *ngIf="editState && itemToEdit.id == post.id">
+            <div class="editpost">
+                <form (ngSubmit)="updateItem(post)" class="form">
+                    <div class="hidden-field">
+                        <textarea name="post" placeholder="  Share your thoughts . . ." cols="30" rows="5" [(ngModel)]="post.post" class="postfield" name="post"></textarea>
+                    </div>
+                        <input type="submit" value="Update" class="btn">
+                </form>
+            </div>
+        </div>
+        <div class="comment-section">
+            <hr>Comments:
+            <div class="container"  *ngFor="let comment of comments">
+                <div class="collection" *ngIf="comment.postid == post.id">
+                    <label class="collection-item">
+                        {{comment.commentcodename}}<br>
+                        {{comment.comment}}
+                        <button class="btnDelete" (click)="deleteComment($event, comment)">Delete</button>
+                    </label><br>
+                    </div>
+            </div>
+            <form (ngSubmit)="onSubmit(post.id, currentUser.firstName)" class="form">
+                <div class="input-field">
+                    <textarea name="comment" placeholder="  Share your comment . . ." cols="30" rows="10" [(ngModel)]="comment.comment" class="commentfield" name="comment">
+                    </textarea>
+                    <input name="userName" id="userName" ngModel type="hidden" value={{this.currentUser.firstName}} [(ngModel)]="comment.commentcodename">
+                    <input name="postID" id="postid" ngModel type="hidden" value={{this.post.id}} [(ngModel)]="comment.postid">
+                    <button type="submit" class="btnComment"><img src="/assets/send.png" class="icon"></button>
+                </div>
+            </form>
+        </div>
+    </div>
     </div>
 </div>
 <ng-template #noItems>
