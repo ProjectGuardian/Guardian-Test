@@ -2,24 +2,30 @@
     <div *ngFor="let post of posts" class="collection">
         <div class="main-container">
         <div class="post-container">
-            <label class="collection-item">{{post.codename}}
-                <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon">
+            <div >
+                <label class="collection-item-code">{{post.codename}} </label>
+                <div class="divIcon">
+                    <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon">
+               </div>
+            </div>
+            <div>
+                <label class="timeDate" >{{post.timeDate.seconds*1000 | date: 'h:mm a MMM d y EEE'}}</label>
                 <img src="/assets/delete.png" *ngIf="editState && itemToEdit.id == post.id" class="deleteIcon" (click)="deleteItem($event, post)">
-                <img src="/assets/compress.png" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="editIcon"><br>
-                <label class="timeDate">{{post.timeDate.seconds*1000 | date: 'h:mm a MMM d y EEE'}}</label>
-            </label>
+                <img src="/assets/compress.png" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="compressEdit">
+            </div>
+                
         </div>
         <div class="post-content-container">
             <label class="collection-item">{{post.post}}</label>
         </div>
         <div class="reaction-container">
-            <form (ngSubmit)="upsDowns(post)" class="form">
-                <label><img src="/assets/ups.png" class="counterIcon">{{post.ups}} <input type="submit" value="" class="btn" style="display: none;"></label>
+            <form (ngSubmit)="upsDowns(post)" class="form1">
+                <label><img src="/assets/ups.png" class="upBTN">{{post.ups}} <input type="submit" value="" class="btn" style="display: none;"></label>
                 <input name="upsBtn" type="hidden" id="upsBtn" [(ngModel)]="post.ups" value={{post.ups}}>
             </form>
-            <form (ngSubmit)="upsDowns2(post)" class="form">
+            <form (ngSubmit)="upsDowns2(post)" class="form2">
             <label>
-                <img src="/assets/downs.png" class="counterIcon">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
+                <img src="/assets/downs.png" class="downBTN">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
             <input name="downsBtn" type="hidden" id="downsBtn" [(ngModel)]="post.downs" value={{post.downs}}>
             </form>
         </div>
