@@ -29,7 +29,6 @@ import { TournamentHomeComponent } from './tournament/tournament-home/tournament
 import { TournamentFeatureComponent } from './tournament/tournament-feature/tournament-feature.component';
 import { TournamentInfoComponent } from './tournament/tournament-info/tournament-info.component';
 import { TournamentFooterComponent } from './tournament/tournament-footer/tournament-footer.component';
-import { NewsComponent } from './tournament/news/news.component';
 import { UpdatePageComponent } from './announcement/update-page/update-page.component';
 
 
@@ -60,7 +59,6 @@ import { UpdatePageComponent } from './announcement/update-page/update-page.comp
         TournamentFeatureComponent,
         TournamentInfoComponent,
         TournamentFooterComponent,
-        NewsComponent,
         UpdatePageComponent,
 
        
