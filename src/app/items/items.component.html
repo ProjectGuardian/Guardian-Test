@@ -50,13 +50,13 @@
                         <label class="comment-Codename">
                             {{comment.commentcodename}}
                         </label>          
-                        <button class="btnDelete" (click)="deleteComment($event, comment)" *ngIf="comment.commentcodename == currentUser.firstName">Delete</button>   
                     </div>             
 
                          <div class="comment-Item">
                             <label class="collection-item">
                                 {{comment.comment}}
                             </label>
+                            <button class="btnDelete" (click)="deleteComment($event, comment)" *ngIf="comment.commentcodename == currentUser.firstName">Delete</button>   
                          </div>
                 </div>
             </div>
