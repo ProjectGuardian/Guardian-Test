@@ -39,13 +39,13 @@
                 </form>
             </div>
         </div><hr>
-        <div>
+        <div class="showCommentSection">
             <label class="showComment" (click)="showComments($event, post)">Show Comments</label>
         </div>
         <div class="comment-section" *ngIf="commentsV && commentsToShow.id == post.id">
             Comments:
             <div class="container"  *ngFor="let comment of comments">
-                <div class="collection" *ngIf="comment.postid == post.id">
+                <div class="collection-comment" *ngIf="comment.postid == post.id">
                     <label class="collection-item">
                         {{comment.commentcodename}}<br>
                         {{comment.comment}}
@@ -62,7 +62,9 @@
                     <button type="submit" class="btnComment"><img src="/assets/send.png" class="icon"></button>
                 </div>
             </form>
-            <label *ngIf="commentsV" (click)="hideComments()" class="showComment">Hide Comments</label>
+            <div class= hideCommentSection>
+            <label *ngIf="commentsV" (click)="hideComments()" class="hideComment">Hide Comments</label>
+        </div>
         </div>
     </div>
     </div>
