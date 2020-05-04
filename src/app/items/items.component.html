@@ -46,12 +46,19 @@
             Comments:
             <div class="container"  *ngFor="let comment of comments">
                 <div class="collection-comment" *ngIf="comment.postid == post.id">
-                    <label class="collection-item">
-                        {{comment.commentcodename}}<br>
-                        {{comment.comment}}
-                        <button class="btnDelete" (click)="deleteComment($event, comment)" *ngIf="comment.commentcodename == currentUser.firstName">Delete</button>
-                    </label>
-                    </div>
+                    <div class="div-CC">
+                        <label class="comment-Codename">
+                            {{comment.commentcodename}}
+                        </label>          
+                        <button class="btnDelete" (click)="deleteComment($event, comment)" *ngIf="comment.commentcodename == currentUser.firstName">Delete</button>   
+                    </div>             
+
+                         <div class="comment-Item">
+                            <label class="collection-item">
+                                {{comment.comment}}
+                            </label>
+                         </div>
+                </div>
             </div>
             <form (ngSubmit)="onSubmit(post.id, currentUser.firstName)" class="form">
                 <div class="input-field">
