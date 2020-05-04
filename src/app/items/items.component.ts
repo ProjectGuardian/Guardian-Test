@@ -25,7 +25,7 @@ post: Item = {
   ups:0,
   downs:0,
   commentid:'',
-  userUDid:[],
+  userName:'',
   timeDate:''
 }
 comment: CommentsItem = {

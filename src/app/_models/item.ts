@@ -5,7 +5,7 @@ export interface Item{
     ups?:number;
     downs?:number;
     commentid?:any;
-    userUDid?:[];
+    userName?:string;
     timeDate?:any;
   }
   export interface CommentsItem{

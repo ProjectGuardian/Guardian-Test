@@ -5,7 +5,7 @@
             <div >
                 <label class="collection-item-code">{{post.codename}} </label>
                 <div class="divIcon">
-                    <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon">
+                    <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon" *ngIf="post.userName == currentUser.firstName">
                     <img src="/assets/delete.png" *ngIf="editState && itemToEdit.id == post.id" class="deleteIcon" (click)="deleteItem($event, post)">
                     <img src="/assets/compress.png" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="compressEdit">
                </div>
