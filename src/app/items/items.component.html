@@ -46,7 +46,7 @@
                     <label class="collection-item">
                         {{comment.commentcodename}}<br>
                         {{comment.comment}}
-                        <button class="btnDelete" (click)="deleteComment($event, comment)">Delete</button>
+                        <button class="btnDelete" (click)="deleteComment($event, comment)" *ngIf="comment.commentcodename == currentUser.firstName">Delete</button>
                     </label><br>
                     </div>
             </div>
