@@ -31,6 +31,7 @@ import { TournamentInfoComponent } from './tournament/tournament-info/tournament
 import { TournamentFooterComponent } from './tournament/tournament-footer/tournament-footer.component';
 import { UpdatePageComponent } from './announcement/update-page/update-page.component';
 import { ContactComponent } from './contact/contact.component';
+import { SearchbarComponent } from './navbar/searchbar/searchbar.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { ContactComponent } from './contact/contact.component';
         TournamentFooterComponent,
         UpdatePageComponent,
         ContactComponent,
+        SearchbarComponent,
 
        
     ],

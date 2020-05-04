@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import {ItemService} from '../_services/item.service';
 import {Item, CommentsItem,React} from '../_models/item'
 import {User} from '../_models/user';
