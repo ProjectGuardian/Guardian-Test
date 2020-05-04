@@ -17,6 +17,6 @@ export interface Item{
   }
   export interface React {
     id: any;
-    userid: any;
-    idpost:any;
+    userid?: any;
+    idpost?:any;
 }

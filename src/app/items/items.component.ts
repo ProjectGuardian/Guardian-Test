@@ -12,9 +12,11 @@ export class ItemsComponent implements OnInit {
 comments: CommentsItem[];
 posts: Item[];
 reacts:React[];
+commentsV:boolean = false;
 editState:boolean = false;
 commentState:boolean = false;
 itemToEdit: Item;
+commentsToShow: Item;
 commentToEdit: CommentsItem;
 currentUser:User;
 cTimeDate =  Date();
@@ -51,6 +53,9 @@ react: React={
     this.itemService.getCommentItems().subscribe(comments=>{
       this.comments = comments;
     })
+    this.itemService.getReactItems().subscribe(reacts=>{
+      this.reacts = reacts;
+    })
   }
   deleteItem(event, post: Item){
     this.clearState();
@@ -86,21 +91,22 @@ react: React={
   }
   //Reacts
   upsDowns(post: Item){
-    if(this.clicked == false){
-    this.clicked = true;
     post.ups +=1;
     console.log("Ups: "+post.ups);
     console.log("Downs: "+post.downs);
     this.itemService.updateItem(post);
-  }
 }
   upsDowns2(post: Item){
-    if(this.clicked == false){
-      this.clicked = true;
     post.downs +=1;
     console.log("Ups: "+post.ups);
     console.log("Downs: "+post.downs);
     this.itemService.updateItem(post);
-    }
+  }
+  showComments(event, post: Item){
+      this.commentsV = true;
+      this.commentsToShow = post;
+  }
+  hideComments(){
+    this.commentsV = false;
   }
 }

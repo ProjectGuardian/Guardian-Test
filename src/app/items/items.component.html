@@ -38,16 +38,19 @@
                         <input type="submit" value="Update" class="btn">
                 </form>
             </div>
+        </div><hr>
+        <div>
+            <label class="showComment" (click)="showComments($event, post)">Show Comments</label>
         </div>
-        <div class="comment-section">
-            <hr>Comments:
+        <div class="comment-section" *ngIf="commentsV && commentsToShow.id == post.id">
+            Comments:
             <div class="container"  *ngFor="let comment of comments">
                 <div class="collection" *ngIf="comment.postid == post.id">
                     <label class="collection-item">
                         {{comment.commentcodename}}<br>
                         {{comment.comment}}
                         <button class="btnDelete" (click)="deleteComment($event, comment)" *ngIf="comment.commentcodename == currentUser.firstName">Delete</button>
-                    </label><br>
+                    </label>
                     </div>
             </div>
             <form (ngSubmit)="onSubmit(post.id, currentUser.firstName)" class="form">
@@ -59,6 +62,7 @@
                     <button type="submit" class="btnComment"><img src="/assets/send.png" class="icon"></button>
                 </div>
             </form>
+            <label *ngIf="commentsV" (click)="hideComments()" class="showComment">Hide Comments</label>
         </div>
     </div>
     </div>
