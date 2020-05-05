@@ -5,5 +5,5 @@
     firstName: string;
     lastName: string;
     token: string;
-    profPic: any;
+    college: string;
 }

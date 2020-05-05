@@ -42,8 +42,8 @@
                 </form>
             </div>
         </div><hr>
-        <div class="showCommentSection">
-            <label class="showComment" (click)="showComments($event, post)">Show Comments</label>
+        <div class="showCommentSection" (click)="showComments($event, post)">
+            <label class="showComment">Show Comments</label>
         </div>
         <div class="comment-section" *ngIf="commentsV && commentsToShow.id == post.id">
             Comments:
@@ -71,9 +71,9 @@
                     <button type="submit" class="btnComment"><img src="/assets/send.png" class="icon"></button>
                 </div>
             </form>
-            <div class= hideCommentSection>
-            <label *ngIf="commentsV" (click)="hideComments()" class="hideComment">Hide Comments</label>
-        </div>
+            <div class="hideCommentSection" *ngIf="commentsV" (click)="hideComments()">
+            <label class="hideComment">Hide Comments</label>
+            </div>
         </div>
     </div>
     </div>
