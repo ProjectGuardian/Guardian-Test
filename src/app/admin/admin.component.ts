@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 
 import { User } from '../_models/user';
 import { UserService, AuthenticationService } from '../_services';
+import { Item } from '@/_models/item';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -12,7 +13,6 @@ import { UserService, AuthenticationService } from '../_services';
 export class AdminComponent implements OnInit {
   currentUser: User;
   users = [];
-
   constructor(private authenticationService: AuthenticationService,
               private userService: UserService) {
               this.currentUser = this.authenticationService.currentUserValue;
