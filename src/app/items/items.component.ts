@@ -12,6 +12,7 @@ import { AuthenticationService } from '../_services/authentication.service';
 export class ItemsComponent implements OnInit {
 comments: CommentsItem[];
 posts: Item[];
+firstName: string;
 reacts:React[];
 commentsV:boolean = false;
 editState:boolean = false;
