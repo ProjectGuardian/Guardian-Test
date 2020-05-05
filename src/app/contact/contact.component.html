@@ -1,1 +1,18 @@
-<p>contact works!</p>
+<form class="portfolio-form">
+    <h2>Send me a message</h2>
+    <div class="form-row">
+        <label class="form-label">Subject:</label>
+        <div class="form-input">
+            <input id="mailSubject" class="form-input-text" type="text">
+        </div>
+    </div>
+    <div class="form-row">
+        <label class="form-label">Message:</label>
+        <div class="form-input">
+            <textarea id="mailMessage" class="form-input-textarea" type="text"></textarea>
+        </div>
+    </div>
+    <div class="form-submit">
+        <a onmouseover="appendMailTo()" id="sendMail" href="mailto:" class="btn-submit">Submit</a>
+    </div>
+</form>
