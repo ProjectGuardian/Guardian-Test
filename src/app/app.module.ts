@@ -8,8 +8,7 @@ import { fakeBackendProvider } from './_helpers';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { AngularFirestoreModule} from 'angularfire2/firestore'
-
+import { AngularFirestoreModule} from 'angularfire2/firestore';
 
 import { appRoutingModule } from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
@@ -31,7 +30,7 @@ import { TournamentInfoComponent } from './tournament/tournament-info/tournament
 import { TournamentFooterComponent } from './tournament/tournament-footer/tournament-footer.component';
 import { UpdatePageComponent } from './announcement/update-page/update-page.component';
 import { ContactComponent } from './contact/contact.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {Ng2SearchPipeModule} from  'ng2-search-filter';
 
 
 @NgModule({
@@ -44,7 +43,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
         AngularFireDatabaseModule,
         AngularFirestoreModule,
         FormsModule,
-        Ng2SearchPipeModule
+        Ng2SearchPipeModule,
         
         
     ],
