@@ -1,5 +1,6 @@
 <div *ngIf="posts?.length > 0;else noItems">
-    <div *ngFor="let post of posts" class="collection">
+    <input type="text" name="search" autocomplete="off" [(ngModel)]="search" class="searchBar" placeholder="Search a post . . . .">
+    <div *ngFor="let post of posts | filter:search" class="collection">
         <div class="main-container">
         <div class="post-container">
             <div >
