@@ -5,12 +5,13 @@
       </button>
     <div class="navbar-nav">
         <div class="flexbox">
-            <div class="usersname" (click)="home()"><img src="/assets/HomeIcon.png" class="homeIcon"></div>
-            <div class="usersname" (click)="tournamentPage()"><img src="/assets/TrophyIcon.png" class="trophyIcon"></div>
-            <div class="usersname" (click)="blogPage()"><img src="/assets/blogIcon.png" class="blogIcon"></div>
-            <div class="stardiv"><img src="/assets/rank-noob.png" class="starbadge"></div>
-            <div class="usersname">{{currentUser.firstName}} {{currentUser.lastName}}<br></div>
-            <div class="end"><a class="nav-item nav-link" (click)="logout()"><img src="/assets/logoutIcon.png" class="logoutIcon"></a></div>
+           <div class="searchBar"><app-searchbar></app-searchbar></div>
+            <div class="usersname" (click)="home()"><img src="/assets/HomeIcon.png" class="homeIcon" data-toggle="tooltip" data-placement="top" title="Home"></div>
+            <div class="usersname" (click)="tournamentPage()"><img src="/assets/TrophyIcon.png" class="trophyIcon" data-toggle="tooltip" data-placement="top" title="Tournament"></div>
+            <div class="usersname" (click)="blogPage()"><img src="/assets/blogIcon.png" class="blogIcon" data-toggle="tooltip" data-placement="top" title="About Us" ></div>
+            <div class="stardiv"><img src="/assets/rank-noob.png" class="starbadge" data-toggle="tooltip" data-placement="top" title="Badge"></div>
+            <div class="usersname" data-toggle="tooltip" data-placement="top" title="Username">{{currentUser.firstName}} {{currentUser.lastName}}<br></div>
+            <div class="end" ><a class="nav-item nav-link" (click)="logout()"><img src="/assets/logoutIcon.png" class="logoutIcon" data-toggle="tooltip" data-placement="top" title="Logout"></a></div>
         </div>
     </div>
   </nav>
