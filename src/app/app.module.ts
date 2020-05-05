@@ -32,6 +32,8 @@ import { TournamentFooterComponent } from './tournament/tournament-footer/tourna
 import { UpdatePageComponent } from './announcement/update-page/update-page.component';
 import { ContactComponent } from './contact/contact.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
         AngularFireDatabaseModule,
         AngularFirestoreModule,
         FormsModule,
-        Ng2SearchPipeModule
+        Ng2SearchPipeModule,
+        PickerModule
+        
         
         
     ],

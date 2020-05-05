@@ -13,6 +13,8 @@ import { Item } from '@/_models/item';
 export class AdminComponent implements OnInit {
   currentUser: User;
   users = [];
+  search;
+  firstName:string;
   constructor(private authenticationService: AuthenticationService,
               private userService: UserService) {
               this.currentUser = this.authenticationService.currentUserValue;

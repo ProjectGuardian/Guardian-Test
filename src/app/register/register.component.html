@@ -35,6 +35,21 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="college">College</label><br>
+            <input list="colleges" class="form-control" formControlName="college" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <datalist id="colleges">
+              <option value="JHS">
+              <option value="SHS">
+              <option value="COB">
+              <option value="CON">
+              <option value="COM">
+              <option value="CST">
+              <option value="COH">
+              <option value="COT">
+              <option value="COE">
+            </datalist>
+    </div>
+    <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Register
