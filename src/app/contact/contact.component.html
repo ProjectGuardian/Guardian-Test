@@ -1,18 +1,38 @@
-<form class="portfolio-form">
-    <h2>Send me a message</h2>
-    <div class="form-row">
-        <label class="form-label">Subject:</label>
-        <div class="form-input">
-            <input id="mailSubject" class="form-input-text" type="text">
-        </div>
+<div class="body">
+    <div class="contact">
+         <!--intro-->
+        <h1>CONTACT US</h1>
+        <P>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore vero totam officiis voluptatem repudiandae
+            quaerat dicta quis, eius suscipit veritatis, labore, blanditiis sequi. Ipsum aut, vero nulla perspiciatis atque
+            deserunt.
+        </P>
     </div>
-    <div class="form-row">
-        <label class="form-label">Message:</label>
-        <div class="form-input">
-            <textarea id="mailMessage" class="form-input-textarea" type="text"></textarea>
-        </div>
+     <!--send email-->
+    <div class="message">
+        <form class="contact-Card">
+            <h2>Send Us a Message</h2>
+            
+            <div class="form-row">
+                <label class="form-label">Subject:</label>
+    
+                <div class="form-input">
+                    <input id="mailSubject" class="form-input-text" type="text">
+                </div>
+            </div>
+    
+            <div class="form-row">
+                <label class="form-label">Message:</label>
+    
+                <div class="form-input">
+                    <textarea id="mailMessage" class="form-input-textarea" type="text"></textarea>
+                </div>
+            </div>
+    
+            <div class="form-submit">
+                <a onmouseover="appendMailTo()" id="sendMail" href="mailto:cjthegreat82@gmail.com"
+                    class="btn-submit">Submit</a>
+            </div>
+        </form>
     </div>
-    <div class="form-submit">
-        <a onmouseover="appendMailTo()" id="sendMail" href="mailto:" class="btn-submit">Submit</a>
-    </div>
-</form>
+</div>

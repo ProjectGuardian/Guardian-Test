@@ -33,4 +33,7 @@ export class AppComponent {
     blogPage(){
         this.router.navigate(['/update-page']);
     }
+    contactPage(){
+        this.router.navigate(['/contact']);
+    }
 }
