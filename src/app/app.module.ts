@@ -36,6 +36,7 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
 
 
 
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -67,7 +68,7 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
         TournamentInfoComponent,
         TournamentFooterComponent,
         UpdatePageComponent,
-        ContactComponent,
+        ContactComponent
 
 
        
