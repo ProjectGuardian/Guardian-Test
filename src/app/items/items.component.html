@@ -8,9 +8,9 @@
             <div >
                 <label class="collection-item-code">{{post.codename}} </label>
                 <div class="divIcon">
-                    <img src="/assets/edit.png" (click)="editItem($event, post)" class="editIcon" *ngIf="post.userName == currentUser.firstName" data-toggle="tooltip" data-placement="top" title="Edit" >
-                    <img src="/assets/delete.png" *ngIf="editState && itemToEdit.id == post.id" class="deleteIcon" (click)="deleteItem($event, post)" data-toggle="tooltip" data-placement="top" title="Delete">
-                    <img src="/assets/compress.png" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="compressEdit" data-toggle="tooltip" data-placement="top" title="Minimize">
+                    <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/edit.png?raw=true" (click)="editItem($event, post)" class="editIcon" *ngIf="post.userName == currentUser.firstName" data-toggle="tooltip" data-placement="top" title="Edit" >
+                    <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/delete.png?raw=true" *ngIf="editState && itemToEdit.id == post.id" class="deleteIcon" (click)="deleteItem($event, post)" data-toggle="tooltip" data-placement="top" title="Delete">
+                    <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/compress.png?raw=true" *ngIf="editState && itemToEdit.id == post.id" (click)="clearState()" class="compressEdit" data-toggle="tooltip" data-placement="top" title="Minimize">
                </div>
             </div>
             <div>
@@ -23,12 +23,12 @@
         </div>
         <div class="reaction-container">
             <form (ngSubmit)="upsDowns(post)" class="form1">
-                <label><img src="/assets/ups.png" class="upBTN" data-toggle="tooltip" data-placement="top" title="Like">{{post.ups}} <input type="submit" value="" class="btn" style="display: none;"></label>
+                <label><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/ups.png?raw=true" class="upBTN" data-toggle="tooltip" data-placement="top" title="Like">{{post.ups}} <input type="submit" value="" class="btn" style="display: none;"></label>
                 <input name="upsBtn" type="hidden" id="upsBtn" [(ngModel)]="post.ups" value={{post.ups}}>
             </form>
             <form (ngSubmit)="upsDowns2(post)" class="form2">
             <label>
-                <img src="/assets/downs.png" class="downBTN" data-toggle="tooltip" data-placement="top" title="Dislike">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
+                <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/downs.png?raw=true" class="downBTN" data-toggle="tooltip" data-placement="top" title="Dislike">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
             <input name="downsBtn" type="hidden" id="downsBtn" [(ngModel)]="post.downs" value={{post.downs}}>
             </form>
         </div>
@@ -68,7 +68,7 @@
                     </textarea>
                     <input name="userName" id="userName" ngModel type="hidden" value={{this.currentUser.firstName}} [(ngModel)]="comment.commentcodename">
                     <input name="postID" id="postid" ngModel type="hidden" value={{this.post.id}} [(ngModel)]="comment.postid">
-                    <button type="submit" class="btnComment"><img src="/assets/send.png" class="icon"></button>
+                    <button type="submit" class="btnComment"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/send.png?raw=true" class="icon"></button>
                 </div>
             </form>
             <div class="hideCommentSection" *ngIf="commentsV" (click)="hideComments()">
