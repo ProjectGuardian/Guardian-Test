@@ -33,6 +33,7 @@ import { UpdatePageComponent } from './announcement/update-page/update-page.comp
 import { ContactComponent } from './contact/contact.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -68,6 +69,7 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
         TournamentFooterComponent,
         UpdatePageComponent,
         ContactComponent,
+        UserProfileComponent,
 
 
        
