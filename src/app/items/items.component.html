@@ -43,7 +43,6 @@
             </div>
         </div><hr>
         <div class="showCommentSection" (click)="showComments($event, post)">
-            <label class="showComment">Show Comments</label>
         </div>
         <div class="comment-section" *ngIf="commentsV && commentsToShow.id == post.id">
             Comments:
@@ -72,7 +71,6 @@
                 </div>
             </form>
             <div class="hideCommentSection" *ngIf="commentsV" (click)="hideComments()">
-            <label class="hideComment">Hide Comments</label>
             </div>
         </div>
     </div>
