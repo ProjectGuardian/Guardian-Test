@@ -2,6 +2,7 @@
     background-image: url(https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/background1234.jpg?raw=true);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
 }
 
 html {
@@ -15,6 +16,7 @@ body {
     padding-top: 0px;
     margin: 0;
     top: 0;
+    left: 0;
     right: 0;
     scroll-behavior: smooth;
     margin-bottom: -10px;
@@ -22,7 +24,7 @@ body {
 }
 
 .about h1 {
-    margin-top: 10px;
+    padding-top: 10px;
     color: rgb(248, 133, 24);
     font-size: 40px;
     text-align: center;
@@ -47,18 +49,26 @@ body {
     font-size: 20px;
     text-align: center;
 }
+.game-real-main-grid {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 .game-main-grid {
-    margin-left: 120px;
     width: 1100px;
     background-color: #1d1d1d;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
     border-style: solid;
     border-width: 4x;
     border-color: rgb(14, 14, 14);
     border-radius: 10px;
     background-image: url(https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/fireBG.jpg?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 10px;
 }
 .game-grid1 {
@@ -67,53 +77,47 @@ body {
     margin:10px;
     font-size: 20px;
     border-radius: 10px;
+    padding-top: 50px;
 }
 .game-grid2 {
     position: relative;
     width: 80%;
     margin:10px;
     font-size: 20px;
+    padding-top: 50px;
 }
 .game-grid3 {
     position: relative;
-    width: 70%;
+    width: 80%;
     margin:10px;
-    margin-top: 50px;
     font-size: 20px;
+    padding-top: 50px;
 }
 .game-grid1 .image {
     position: sticky;
     width: 80%;
     height: 55%;
-    float: right;
-    margin-right: -20px;
 }
 .game-grid2 .image {
     position: sticky;
     width: 80%;
     height: 57%;
-    float: right;
-    margin-right: -25px;
 }
 .game-grid3 .image {
     position: sticky;
     width: 80%;
     height: 80%;
-    float: right;
-    margin-right: -20px;
 }
 .game-main-grid h1{
     text-align: center;
     color: rgb(248, 133, 24);
     font-size: 1.3rem;
-    margin-left: 35%;
 }
 .game-main-grid h2 {
     background-color: rgb(248, 133, 24);
     text-align: center;
     color: black;
     font-size: 1.5rem;
-    margin-left: 40%;
     margin-bottom:20%;
     border-radius: 10px;
 }
