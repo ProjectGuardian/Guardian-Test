@@ -1,8 +1,7 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import {ItemService} from '../_services/item.service';
 import {Item, CommentsItem,React} from '../_models/item'
-import {User} from '../_models/user';
-import { AuthenticationService } from '../_services/authentication.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-items',
@@ -12,6 +11,7 @@ import { AuthenticationService } from '../_services/authentication.service';
 export class ItemsComponent implements OnInit {
 comments: CommentsItem[];
 posts: Item[];
+search;
 firstName: string;
 reacts:React[];
 commentsV:boolean = false;
@@ -20,7 +20,6 @@ commentState:boolean = false;
 itemToEdit: Item;
 commentsToShow: Item;
 commentToEdit: CommentsItem;
-currentUser:User;
 cTimeDate =  Date();
 clicked:boolean = false;
 post: Item = {
@@ -44,8 +43,7 @@ react: React={
   userid:'',
   idpost:''
 }
-  constructor(private itemService: ItemService,private authenticationService: AuthenticationService) { 
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+  constructor(public auth: AuthenticationService, private itemService: ItemService) { 
   }
 
   ngOnInit(): void {

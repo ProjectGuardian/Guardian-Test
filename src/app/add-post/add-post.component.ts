@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ItemService} from '../_services/item.service';
-import {Item, CommentsItem, React} from '../_models/item';
-import {User} from '../_models/user';
-import { AuthenticationService } from '@/_services/authentication.service';
-
+import { AuthenticationService, TokenPayload } from '../authentication.service';
+import { Router } from '@angular/router';
+import { CommentsItem, React, Item } from '../_models';
+import { ItemService } from '../_services/item.service';
 
 @Component({
   selector: 'app-add-post',
@@ -11,10 +10,11 @@ import { AuthenticationService } from '@/_services/authentication.service';
   styleUrls: ['./add-post.component.less']
 })
 export class AddPostComponent implements OnInit {
-  currentUser : User;
+
+  constructor(public auth: AuthenticationService, private router: Router,private itemService:ItemService) { }
+  now = new Date();
   comments: CommentsItem[];
   reacts: React[];
-  now = new Date();
   post: Item = {
     id:'',
     post: '',
@@ -29,16 +29,6 @@ export class AddPostComponent implements OnInit {
     commentcodename:'',
     postid:''
   }
-  react: React = {
-    id:'',
-    userid:'',
-    idpost:''
-  }
-
-  constructor(private itemService:ItemService,private authenticationService: AuthenticationService ) {
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-   }
-
   ngOnInit(): void {
   }
   onSubmit(userName){
@@ -49,7 +39,6 @@ export class AddPostComponent implements OnInit {
       this.itemService.addItem(this.post);
       this.post.post = '';
       this.post.codename = '';
-      console.log(this.currentUser.firstName);
     }
   }
 }

@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
-import { fakeBackendProvider } from './_helpers';
+
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
@@ -12,15 +12,15 @@ import { AngularFirestoreModule} from 'angularfire2/firestore'
 
 
 import { appRoutingModule } from './app.routing';
-import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register';
 import { AlertComponent } from './_components';
-import { AdminComponent } from './admin/admin.component';
+// import { AdminComponent } from './admin/admin.component';
 
-import { environment } from 'environments/environment';
+import { environment } from 'environments/environment.prod';
 import { ItemsComponent } from './items/items.component';
 import {ItemService} from './_services/item.service';
 import { AddPostComponent } from './add-post/add-post.component';
@@ -32,8 +32,10 @@ import { TournamentFooterComponent } from './tournament/tournament-footer/tourna
 import { UpdatePageComponent } from './announcement/update-page/update-page.component';
 import { ContactComponent } from './contact/contact.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthenticationService } from './authentication.service';
+import { BulletinComponent } from './bulletin/bulletin.component';
 
 
 
@@ -49,10 +51,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
         AngularFirestoreModule,
         FormsModule,
         Ng2SearchPipeModule,
-        PickerModule
-        
-        
-        
     ],
     declarations: [
         AppComponent,
@@ -60,7 +58,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
         LoginComponent,
         RegisterComponent,
         AlertComponent,
-        AdminComponent,
+        // AdminComponent,
         ItemsComponent,
         AddPostComponent,
         AboutComponent,
@@ -71,15 +69,13 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
         UpdatePageComponent,
         ContactComponent,
         UserProfileComponent,
+        BulletinComponent,
 
 
        
     ],
     providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
-        fakeBackendProvider,ItemService
+        ItemService,AuthenticationService,AuthGuardService
     ],
     bootstrap: [AppComponent]
 })

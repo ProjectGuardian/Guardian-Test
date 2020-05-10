@@ -1,14 +1,14 @@
 <div class="card">
-        <img src="/assets/freedomwall.png" class="freedomwall">
-        <form (ngSubmit)="onSubmit(currentUser.firstName)" class="form">
-            <div class="input-field">
-                <textarea id="mytextarea" name="post" placeholder="  Share your thoughts . . ." cols="30" rows="10" [(ngModel)]="post.post" class="postfield" name="post">
-                </textarea>
-            </div>
-            <div class="input-field">
-                <input type="text" placeholder="    Use a codename" [(ngModel)]="post.codename" name="codename"  class="codenamefield">
-                <input type="hidden" name="userName" ngModel id="userName" value={{currentUser.firstName}} [(ngModel)]="post.userName">
-                <button type="submit" class="btnPost"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/send.png?raw=true" class="icon">POST</button>
-            </div>
-        </form>
+    <img src="/assets/freedomwall.png" class="freedomwall">
+    <form (ngSubmit)="onSubmit(auth.getUserDetails()?.first_name)" class="form">
+        <div class="input-field">
+            <textarea id="mytextarea" name="post" placeholder="  Share your thoughts . . ." cols="30" rows="10" [(ngModel)]="post.post" class="postfield" name="post">
+            </textarea>
+        </div>
+        <div class="input-field">
+            <input type="text" placeholder="    Use a codename" [(ngModel)]="post.codename" name="codename"  class="codenamefield">
+            <input type="hidden" name="userName" ngModel id="userName" value={{auth.getUserDetails()?.first_name}} [(ngModel)]="post.userName">
+            <button type="submit" class="btnPost"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/send.png?raw=true" class="icon">POST</button>
+        </div>
+    </form>
 </div>

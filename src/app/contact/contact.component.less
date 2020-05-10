@@ -1,54 +1,69 @@
+img {
+    width: 110%;
+    height: 40%;
+    margin-left: -85px;
+  }
 .body {
-    background-color:  rgb(27, 27, 27);
+	background-image: url(https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/background1234.jpg?raw=true);
+    scroll-behavior: smooth;
+	overflow-x: hidden;
+	
 }
 .contact {
-    background-color: black;
+    margin-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .contact h1 {
     text-align: center;
-    font-size: 30px;
-    color: orange;
+    font-size: 50px;
+    color: rgb(248, 133, 24);
+    margin:0 auto;
+    
 }
 .contact p {
-    text-align: center;
+    padding: 50px;
+    text-align: justify;
     font-size: 25px;
     color: white;
 }
-.message {
-    background-color:  rgb(27, 27, 27);
-}
 
 .contact-Card {
-    border-radius: 10px;
-    padding: 50px;
-    background-color:  rgb(27, 27, 27);
-    width: 1200px;
+    background-color: rgb(27, 27, 27);
     border: solid;
+    border-radius: 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 50px;
+    width: 1200px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .contact-Card h2 {
-    color: orange;
-    font-size: 30px;
+    color: rgb(248, 133, 24);
+    font-size: 50px;
+    text-align: center;
+    margin:0 auto;
+    margin-bottom: 70px;
 }
 .form-label {
     padding: 10px 0px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 .form-row {
     padding: 10px;
 }
 .form-input input {
     width: 100%;
-    padding: 7px 0px;
+    padding: 7px 40px;
     border-radius: 8px;
+    margin-left: 25px;
 }
 .form-input-textarea {
     font-family: Arial, Helvetica;
     border-radius: 10px;
     width: 500%;
     padding: 7px 0px;
-    height: 100px;
+    margin-left: 10px;
+    height: 200px;
 }
 .form-submit {
     margin-top: 4px;
@@ -58,9 +73,156 @@
     margin: 0;
 }
 .btn-submit {
+    font-size: 20px;
     padding: 3px 15px;
+    margin-right: 28px;
     margin-top: 5px;
+    border: solid;
+    border-radius: 10px;
+    color: black;
+    background-color: rgb(248, 133, 24);
     text-decoration: none;
-    color:white;
-    background-color: black;
+}
+
+footer{
+    bottom: 0;
+    margin:0 auto;
+
+}
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+    width: 100%;
+	text-align: left;
+    font: bold 16px sans-serif;
+    overflow-x: hidden;
+ 
+	padding: 55px 50px;
+	margin-top: 80px;
+}
+ 
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+ 
+.footer-distributed .footer-left{
+	width: 40%;
+}
+ 
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+ 
+.footer-distributed h3 span{
+	color:rgb(248, 133, 24);
+}
+ 
+ 
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+ 
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+ 
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+ 
+ 
+.footer-distributed .footer-center{
+	width: 35%;
+}
+ 
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+ 
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+ 
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+ 
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+ 
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+ 
+.footer-distributed .footer-right{
+	width: 20%;
+}
+ 
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+ 
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+ 
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+ 
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+ 
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+ 
+	margin-right: 3px;
+	margin-bottom: 5px;
 }

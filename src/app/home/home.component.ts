@@ -1,25 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { first, map } from 'rxjs/operators';
-
-import { User } from '../_models/user';
-import { UserService, AuthenticationService } from '../_services';
-
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService} from '../authentication.service';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: 'home.component.html' ,
-    styleUrls:['./home.component.less']})
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.less']
+})
 export class HomeComponent implements OnInit {
-    currentUser: User;
-    users = [];
 
-    constructor(
-        private authenticationService: AuthenticationService,
-        private userService: UserService,
-       
-    ) {
-        this.currentUser = this.authenticationService.currentUserValue;
-    }
-    ngOnInit() {
-    }
+  constructor(public auth:AuthenticationService) { }
+
+  ngOnInit(): void {
+  }
+
 }

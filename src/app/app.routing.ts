@@ -1,24 +1,22 @@
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { AuthGuard } from './_helpers';
-import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component'
+import { RegisterComponent } from './register/register.component'
+import { HomeComponent } from './home/home.component'
+import { AuthGuardService } from './auth-guard.service';
 import { TournamentHomeComponent } from './tournament/tournament-home/tournament-home.component';
 import { UpdatePageComponent } from './announcement/update-page/update-page.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-    { path: 'Admin', component: AdminComponent, canActivate: [AuthGuard]},
-    { path: 'tournament-home', component: TournamentHomeComponent, canActivate: [AuthGuard]},
-    { path: 'update-page', component: UpdatePageComponent, canActivate: [AuthGuard]},
-    { path: 'contact', component: ContactComponent, canActivate: [AuthGuard]},
+  { path: '', component: LoginComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
+  { path: 'register', component: RegisterComponent },
+  { path: 'tournament-home', component: TournamentHomeComponent, canActivate: [AuthGuardService]},
+  { path: 'update-page', component: UpdatePageComponent, canActivate: [AuthGuardService]},
+  { path: 'contact', component: ContactComponent, canActivate: [AuthGuardService]},
 
-    { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' }
 ];
-
 export const appRoutingModule = RouterModule.forRoot(routes);
+

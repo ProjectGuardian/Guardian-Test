@@ -1,39 +1,36 @@
-import { Component } from '@angular/core';
+  
+import { Component } from '@angular/core'
+import { AuthenticationService } from './authentication.service'
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from './_services';
-import { User } from './_models';
-
-
-@Component({ 
-    selector: 'app-root', 
-    templateUrl: 'app.component.html'
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-    currentUser: User;
-  title: "AUP | Guardians";
-
-    constructor(
-        private router: Router,
-        private authenticationService: AuthenticationService
-    ) {
-        this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-    }
-
-    logout() {
-        this.authenticationService.logout();
-        this.router.navigate(['/login']);
-    }
-    tournamentPage(){
-        this.router.navigate(['/tournament-home']);
-    }
-    home(){
-        this.router.navigate(['']);
-    }
-    blogPage(){
-        this.router.navigate(['/update-page']);
-    }
-    contactPage(){
-        this.router.navigate(['/contact']);
-    }
+  title = 'client';
+  constructor(public auth: AuthenticationService,private router: Router) {
+  }
+  login(){
+    this.router.navigate(['/login']);
+  }
+  register(){
+    this.router.navigate(['/register']);
+  }
+  home(){
+    this.router.navigate(['/home']);
+  }
+  tournamentPage(){
+    this.router.navigate(['/tournament-home']);
+}
+  blogPage(){
+    this.router.navigate(['/update-page']);
+  }
+  contactPage(){
+      this.router.navigate(['/contact']);
+  }
+  logout() {
+    this.auth.logout();
+    this.router.navigate(['/login']);
+}
 }
