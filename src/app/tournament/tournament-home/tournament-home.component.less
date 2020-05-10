@@ -1,21 +1,80 @@
 html {
-    scroll-behavior: smooth;
-    margin: 0;
-    top: 0;
-    right: 0;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-body {
-    font-family: 'Istok Web', sans-serif;
-}
-img {
-  width: 110%;
-  height: 40%;
-  margin-left: -85px;
-}
-.tournament-container {
   background-color: rgb(27, 27, 27);
-}
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 0px;
+  margin-top: -10px;
+  scroll-behavior: smooth;
+  margin: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  
+  }
+  body {
+  margin: 0px;
+  padding: 0px;
+  border: 5px;
+  border-color: rgb(248, 133, 24);
+  border-style: solid;
+  border-width: 8px;
+  }
+  .display h1 {
+      color: rgb(248, 133, 24);
+      text-align: center;
+  }
+  img {
+      margin-top: 69px;
+      width: 95%;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      padding: 10px;
+  }
+  .info-main-grid {
+      text-align: center;
+      border-style: hidden;
+      background-color: rgb(27, 27, 27);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 5px;
+  }
+  .info-grid1, .info-grid2, .info-grid3, .info-grid4 {
+      border-color: rgb(248, 133, 24);
+      border-style: solid;
+      border-radius: 10px;
+      color: white;
+      text-align: left;
+      margin:10px;
+  }
+  .info-main-grid p {
+      color:white;
+      text-align: justify;
+      font-size: 18px;
+      padding: 10px;
+  }
 
+  .info-main-grid h3 {
+      color: black;
+      margin-top: 10px;
+      text-align: center;
+      background-color: rgb(248, 133, 24);
+      margin: 0px;
+  }
+  li {
+      margin: 1em;
+  }
+  .link {
+      color: white;
+  }
+  /*Moibile Responsive*/
+  @media screen and (max-width: 812px){
+      .info-main-grid {
+          grid-template-columns: none;
+          text-align: center;
+          position: sticky;
+      }
+  }
