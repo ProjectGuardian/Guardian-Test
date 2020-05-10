@@ -8,8 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { AngularFirestoreModule} from 'angularfire2/firestore'
-
+import { AngularFirestoreModule} from 'angularfire2/firestore';
 
 import { appRoutingModule } from './app.routing';
 
