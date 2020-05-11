@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'client';
+  clicked:boolean = false;
   constructor(public auth: AuthenticationService,private router: Router) {
   }
   login(){

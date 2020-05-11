@@ -10,7 +10,12 @@
             <div class="usersname" (click)="blogPage()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/blogIcon.png?raw=true" class="blogIcon" data-toggle="tooltip" data-placement="top" title="Updates"></div>
             <div class="usersname" (click)="contactPage()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/ContactIcon.png?raw=true" class="contactIcon" data-toggle="tooltip" data-placement="top" title="Contact Us"></div>
             <div class="stardiv"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/rank-noob.png?raw=true" class="starbadge" data-toggle="tooltip" data-placement="top" title="Badge"></div>
-            <div class="usersname">{{auth.getUserDetails()?.first_name}} {{auth.getUserDetails()?.last_name}}<br></div>
+            <div class="usersname" (mouseenter)="clicked = true" (mouseout)="clicked = false">{{auth.getUserDetails()?.first_name}} {{auth.getUserDetails()?.last_name}}<br>
+            <div id="userProfile" *ngIf="clicked == true">
+                <app-user-profile></app-user-profile>
+            </div>
+            </div>
+            
             <div class="end" ><a class="nav-item nav-link" (click)="logout()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/logoutIcon.png?raw=true" class="logoutIcon" data-toggle="tooltip" data-placement="top" title="Logout"></a></div>
         </div>
     </div>
