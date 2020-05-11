@@ -12,6 +12,8 @@ export class AppComponent {
   clicked:boolean = false;
   constructor(public auth: AuthenticationService,private router: Router) {
   }
+  ngOnInit(){
+  }
   login(){
     this.router.navigate(['/login']);
   }
