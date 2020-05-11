@@ -5,11 +5,10 @@
       </button>
     <div class="navbar-nav">
         <div class="flexbox">
-            <div id="home" class="usersname" (click)="home()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/HomeIcon.png?raw=true" class="homeIcon" data-toggle="tooltip" data-placement="top" title="Home"></div>
-            <div id="tournament" class="usersname" (click)="tournamentPage()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/TrophyIcon.png?raw=true" class="trophyIcon" data-toggle="tooltip" data-placement="top" title="Tournament"></div>
-            <div id="blog" class="usersname" (click)="blogPage()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/blogIcon.png?raw=true" class="blogIcon" data-toggle="tooltip" data-placement="top" title="Updates"></div>
-            <div id="contact" class="usersname" (click)="contactPage()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/ContactIcon.png?raw=true" class="contactIcon" data-toggle="tooltip" data-placement="top" title="Contact Us"></div>
-            <div class="stardiv"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/rank-noob.png?raw=true" class="starbadge" data-toggle="tooltip" data-placement="top" title="Badge"></div>
+            <div class="usersname" (click)="home()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/HomeIcon.png?raw=true" class="homeIcon" data-toggle="tooltip" data-placement="top" title="Home"></div>
+            <div class="usersname" (click)="tournamentPage()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/TrophyIcon.png?raw=true" class="trophyIcon" data-toggle="tooltip" data-placement="top" title="Tournament"></div>
+            <div class="usersname" (click)="blogPage()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/blogIcon.png?raw=true" class="blogIcon" data-toggle="tooltip" data-placement="top" title="Updates"></div>
+            <div class="usersname" (click)="contactPage()"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/ContactIcon.png?raw=true" class="contactIcon" data-toggle="tooltip" data-placement="top" title="Contact Us"></div>
             <div class="usersname" (mouseenter)="clicked = true" (mouseout)="clicked = false">{{auth.getUserDetails()?.first_name}} {{auth.getUserDetails()?.last_name}}<br>
             <div id="userProfile" *ngIf="clicked == true">
                 <app-user-profile></app-user-profile>
