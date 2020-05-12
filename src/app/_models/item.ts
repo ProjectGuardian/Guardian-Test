@@ -21,3 +21,6 @@ export interface Item{
     userEmail?:string;
     addCount?:number;
   }
+  export interface User{
+    userID:any;
+  }

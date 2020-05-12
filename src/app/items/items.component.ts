@@ -1,6 +1,6 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import {ItemService} from '../_services/item.service';
-import {Item, CommentsItem, Likes} from '../_models/item'
+import {Item, CommentsItem, Likes, User} from '../_models/item'
 import { AuthenticationService } from '../authentication.service';
 import { interval, Observable } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -14,6 +14,7 @@ export class ItemsComponent implements OnInit {
 likes: Likes[];
 comments: CommentsItem[];
 posts: Item[];
+users: User[];
 search;
 firstName: string;
 commentsV:boolean = false;
@@ -45,6 +46,9 @@ like: Likes = {
   postID: '',
   userEmail: '',
   addCount:0
+}
+user: User={
+  userID: ''
 }
   constructor(public auth: AuthenticationService, private itemService: ItemService,private afs: AngularFirestore) { 
   }
@@ -94,23 +98,25 @@ like: Likes = {
     this.itemService.deleteComm(comment);
   }
   //Reacts
-  ups(post: Item, userEmail){
-    if(this.like.id.includes(`${userEmail}_${post.id}`)){
-      alert('You already liked the post');
-    }else{
-    this.like.addCount = 1;
-    post.ups += this.like.addCount;
-    this.like.postID = post.id;
-    this.like.userEmail = userEmail;
-    this.like.id = `${userEmail}_${post.id}`;
-    this.itemService.updateItem(post);
-    this.itemService.setLikes(this.like.id, this.like.userEmail, this.like.postID,this.like.addCount);
-    }
-}
-  downs(post: Item){
-    post.downs +=1;
-    this.itemService.updateItem(post);
-  }
+//   ups(post: Item, userEmail,user){
+//     // if(this.like.id.includes(`${userEmail}_${post.id}`)){
+//     //   alert('You already liked the post');
+//     // }else{
+//     this.like.addCount = 1;
+//     post.ups += this.like.addCount;
+//     this.like.postID = post.id;
+//     this.like.userEmail = userEmail;
+//     this.like.id = `${userEmail}_${post.id}`;
+//     this.itemService.updateItem(post);
+//     this.itemService.setLikes(this.like.id, this.like.userEmail, this.like.postID,this.like.addCount);
+//     this.user.userID = userEmail;
+//     this.itemService.addUser(user);
+//     // }
+// }
+//   downs(post: Item){
+//     post.downs +=1;
+//     this.itemService.updateItem(post);
+//   }
   showComments(event, post: Item){
       this.commentsV = true;
       this.commentsToShow = post;
