@@ -42,7 +42,7 @@
                 </form>
             </div>
         </div><hr>
-        <div class="showCommentSection" (click)="showComments($event, post)">
+        <div class="showCommentSection"  (click)="showComments($event, post)" data-toggle="tooltip" title="Show Comment">
             <label class="showComment"></label>
         </div>
         <div class="comment-section" *ngIf="commentsV && commentsToShow.id == post.id">
@@ -71,7 +71,7 @@
                     <button type="submit" class="btnComment"><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/send.png?raw=true" class="icon"></button>
                 </div>
             </form>
-            <div class="hideCommentSection" *ngIf="commentsV" (click)="hideComments()">
+            <div class="hideCommentSection" *ngIf="commentsV" (click)="hideComments()" data-toggle="tooltip" title="Hide Comments">
             <label class="hideComment"></label>
             </div>
         </div>
