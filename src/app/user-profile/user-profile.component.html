@@ -2,9 +2,55 @@
     <div class="nameCard">
         <h2>{{auth.getUserDetails()?.first_name}} {{auth.getUserDetails()?.last_name}}</h2> 
     </div>
-    <h6>Department: College of Business</h6>
+    <h6>Department: {{auth.getUserDetails()?.college}}</h6>
     <div class="badges">
+    <div>
     <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/rank-noob.png?raw=true" class="starbadge" data-toggle="tooltip" data-placement="top" title="Badge">
+    </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'COB'">
     <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/COB.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'COH'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/COH.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+        </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'COD'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/COD.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+    
+    <div *ngIf="auth.getUserDetails().college == 'COE'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/COE.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'CAH'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/CAH.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'COM'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/COM.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'CON'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/CONurs.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'COT'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/COT.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'CST'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/CST.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'SHS'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/HS.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+
+    <div *ngIf="auth.getUserDetails().college == 'JHS'">
+        <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/CollegeRanks/HS.png?raw=true" class="collegebadge" data-toggle="tooltip" data-placement="top" title="Colle">
+    </div>
+
     </div>
 </div>

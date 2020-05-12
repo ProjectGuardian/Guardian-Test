@@ -15,8 +15,12 @@ export interface Item{
     postid:any;
     ctimeDate?:any;
   }
-  export interface React {
-    id: any;
-    userid?: any;
-    idpost?:any;
-}
+  export interface Likes{
+    id:any;
+    postID?:string;
+    userEmail?:string;
+    addCount?:number;
+  }
+  export interface User{
+    userID:any;
+  }

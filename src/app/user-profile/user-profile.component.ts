@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from '../_models/user';
 import { AuthenticationService } from '../authentication.service';
 import {ItemService} from '../_services/item.service';
 
