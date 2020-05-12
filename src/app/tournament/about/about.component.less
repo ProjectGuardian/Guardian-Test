@@ -50,6 +50,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-bottom: 4%;
 }
 .game-main-grid {
     width: 80%;
@@ -117,5 +118,26 @@ body {
     font-size: 1.5rem;
     margin-bottom:20%;
     border-radius: 10px;
+}
+
+//Mobile responsive
+@media screen and (max-width:630px){
+    .about h3{
+        width: 100%;
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+    .game-main-grid{
+        grid-template-columns: none;
+        background-image: url(https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/background1234.jpg?raw=true);
+        background-size: cover;
+        width: 89%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .game-main-grid{
+        width: 85%;
+    }
 }
 

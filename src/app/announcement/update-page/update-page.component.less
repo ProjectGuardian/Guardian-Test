@@ -89,45 +89,50 @@
 }
 /*Moibile Responsive*/
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 1080px) {
     .heroImage img{
         margin-top: 70px;
         width: 100%;
+    }
+    .Tups {
+        font-size: 3rem;
+        padding: 0px;
     }
     .post-grid {
         grid-template-columns: repeat(1, 1fr);
         display: grid;
     }
     .post {
-        width: 300px;
+        width: 90%;
     }
     .picture-post {
-        width: 290px;
-    }
-    .post-title h1 {
-        font-size: 1.2rem;
-    }
-    
-}
-
-@media screen and (max-width: 360px){
-    .heroImage img{
-        margin-top: 70px;
         width: 100%;
     }
+    .post-title h1 {
+        font-size: 4rem;
+    }
+    .message-post h2, .message-post h3 {
+        font-size: 3rem;
+    }
+    .message-post p {
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 420px) {
     .Tups {
-        font-size: 1.7rem;
-        padding-top: 5px;
+        font-size: 28px;
+        padding: 0px;
     }
-    .post-grid {
-        grid-template-columns: repeat(1, 1fr);
-        display: grid;
-        justify-items: center;
+    .post-title h1 {
+        font-size: 27px;
+        padding: 0px;
     }
-  }
-
- 
-
-@media screen and (max-width: 4200px){
-    
+    .message-post h2, .message-post h3 {
+        font-size: 1.2rem;
+    }
+    .message-post p {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
 }

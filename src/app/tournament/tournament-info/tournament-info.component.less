@@ -26,7 +26,7 @@ html {
         text-align: center;
     }
     img {
-        margin-top: 69px;
+        margin-top: 4%;
         width: 95%;
         justify-content: center;
         margin-left: auto;
@@ -40,6 +40,7 @@ html {
         background-color: rgb(27, 27, 27);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
         margin-top: 5px;
     }
     .info-grid1, .info-grid2, .info-grid3, .info-grid4 {
@@ -48,7 +49,7 @@ html {
         border-radius: 10px;
         color: white;
         text-align: left;
-        margin:10px;
+        margin: 7%;
     }
     .info-main-grid p {
         color:white;
@@ -75,6 +76,14 @@ html {
         .info-main-grid {
             grid-template-columns: none;
             text-align: center;
-            position: sticky;
+        }
+    }
+    @media screen and (max-width: 450px){
+        img{
+            width: 89%;
+        }
+        .info-main-grid {
+            grid-template-columns: none;
+            text-align: center;
         }
     }

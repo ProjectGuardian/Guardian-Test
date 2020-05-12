@@ -1,6 +1,7 @@
 img {
     width: 110%;
-    height: 40%;
+	height: 40%;
+	margin-top: 20px;
     margin-left: -85px;
   }
 .body {
@@ -12,6 +13,7 @@ img {
 	overflow-x: hidden;
 	
 }
+//intro 
 .contact {
     margin-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
@@ -29,23 +31,25 @@ img {
     font-size: 25px;
     color: white;
 }
-
+//Send us a message section
 .contact-Card {
     background-color: rgb(27, 27, 27);
     border: solid;
-    border-radius: 10px;
-    margin-left: 80px;
-    margin-right: 80px;
+    border-radius: 20px;
+	margin-left: auto;
+	margin-right: auto;
     padding: 50px;
-    width: 1200px;
+	width: 950px;
+	height: 500px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .contact-Card h2 {
     color: rgb(248, 133, 24);
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     margin:0 auto;
-    margin-bottom: 70px;
+	margin-bottom: 40px;
+    margin-top: -35px;
 }
 .form-label {
     padding: 10px 0px;
@@ -63,7 +67,7 @@ img {
 .form-input-textarea {
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 10px;
-    width: 500%;
+    width: 350%;
     padding: 7px 0px;
     margin-left: 10px;
     height: 200px;
@@ -84,20 +88,12 @@ img {
     border-radius: 10px;
     color: black;
 	background-color: rgb(248, 133, 24);
-	transition-duration: 0.3s;
 	text-decoration: none;
-}
-.btn-submit {
-	background-color: white;
-	color: orange;
-	border: 2px sold orange;
-}
-.btn-submit:hover {
-	background-color: orange;
-	color: white;
+
 }
 
-footer{
+//footer
+.footer{
     bottom: 0;
     margin:0 auto;
 
@@ -156,7 +152,6 @@ footer{
 	font-weight: normal;
 	margin: 0;
 }
- 
  
 .footer-distributed .footer-center{
 	width: 35%;
@@ -241,44 +236,11 @@ footer{
 }
 
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media  screen and (max-width: 900px) {
-	.contact-Card, .contact-Card h2{
-		grid-template-columns: repeat(1, 1fr);
-	}
-
+/* Mobile Responsive */
+@media  screen and (max-width: 320px) {
 	.contact-Card{
-		justify-content: center;
-		background-color: rgb(27, 27, 27);
-    	border: solid;
-		border-radius: 10px;
-    	margin-left: 80px;
-    	margin-right: 80px;
-    	padding: 50px;
-    	width: 500px;
-    	font-family: Arial, Helvetica, sans-serif;
-	}
-
-	.body{
-		background-image: url(https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/background1234.jpg?raw=true);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-		scroll-behavior: smooth;
-		overflow: hidden;
-	}
-
-	.footer-distributed{
-		background-size: cover;
-		background-color: #292c2f;
-		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-		box-sizing: border-box;
-		width: 100%;
-		text-align: left;
-		font: bold 16px sans-serif;
-		overflow-x: hidden;
-		padding: 55px 50px;
-		margin-top: 80px;
+		grid-template-columns: repeat(1, 1fr);
+		width: 300px;
 	}
 }
 p label{
