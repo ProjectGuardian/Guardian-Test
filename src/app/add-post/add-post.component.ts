@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, TokenPayload } from '../authentication.service';
 import { Router } from '@angular/router';
-import { CommentsItem, React, Item } from '../_models';
+import { CommentsItem, Item } from '../_models';
 import { ItemService } from '../_services/item.service';
 
 @Component({
@@ -14,7 +14,6 @@ export class AddPostComponent implements OnInit {
   constructor(public auth: AuthenticationService, private router: Router,private itemService:ItemService) { }
   now = new Date();
   comments: CommentsItem[];
-  reacts: React[];
   post: Item = {
     id:'',
     post: '',

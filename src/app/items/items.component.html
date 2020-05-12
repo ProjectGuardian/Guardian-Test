@@ -22,15 +22,21 @@
             <label class="collection-item">{{post.post}}</label>
         </div>
         <div class="reaction-container">
-            <form (ngSubmit)="upsDowns(post)" class="form1">
-                <label><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/ups.png?raw=true" class="upBTN" data-toggle="tooltip" data-placement="top" title="Like">{{post.ups}} <input type="submit" value="" class="btn" style="display: none;"></label>
+            <form (ngSubmit)="ups(post, auth.getUserDetails().email,like)" class="form1" >
+                <label>
+                <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/ups.png?raw=true" class="upBTN" data-toggle="tooltip" data-placement="top" title="Like">
+                <label>{{post.ups}}</label>
+                <input type="submit" value="" class="btn" style="display: none;"></label>
                 <input name="upsBtn" type="hidden" id="upsBtn" [(ngModel)]="post.ups" value={{post.ups}}>
+                <input type="hidden" name="userEmail" id="userEmail" [(ngModel)]="like.userEmail" value={{auth.getUserDetails()?.email}}>
+                <input name="postID" id="postid" ngModel type="hidden" value={{this.post.id}} [(ngModel)]="like.postID">
+                <input type="hidden" id="likeid" ngModel name="likeid" value={{this.like.id}} [(ngModel)]="like.id">
             </form>
-            <form (ngSubmit)="upsDowns2(post)" class="form2">
+            <!-- <form (ngSubmit)="upsDowns2(post)" class="form2">
             <label>
                 <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/downs.png?raw=true" class="downBTN" data-toggle="tooltip" data-placement="top" title="Dislike">{{post.downs}} <input type="submit" value="" class="btn" style="display: none;"></label>
             <input name="downsBtn" type="hidden" id="downsBtn" [(ngModel)]="post.downs" value={{post.downs}}>
-            </form>
+        </form> -->
         </div>
         <div class="hidden-edit-container" *ngIf="editState && itemToEdit.id == post.id">
             <div class="editpost">

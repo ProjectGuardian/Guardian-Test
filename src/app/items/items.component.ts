@@ -1,7 +1,9 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import {ItemService} from '../_services/item.service';
-import {Item, CommentsItem,React} from '../_models/item'
+import {Item, CommentsItem, Likes} from '../_models/item'
 import { AuthenticationService } from '../authentication.service';
+import { interval, Observable } from 'rxjs';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-items',
@@ -9,11 +11,11 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./items.component.less']
 })
 export class ItemsComponent implements OnInit {
+likes: Likes[];
 comments: CommentsItem[];
 posts: Item[];
 search;
 firstName: string;
-reacts:React[];
 commentsV:boolean = false;
 editState:boolean = false;
 commentState:boolean = false;
@@ -38,12 +40,13 @@ comment: CommentsItem = {
   postid:'',
   ctimeDate:''
 }
-react: React={
+like: Likes = {
   id:'',
-  userid:'',
-  idpost:''
+  postID: '',
+  userEmail: '',
+  addCount:0
 }
-  constructor(public auth: AuthenticationService, private itemService: ItemService) { 
+  constructor(public auth: AuthenticationService, private itemService: ItemService,private afs: AngularFirestore) { 
   }
 
   ngOnInit(): void {
@@ -53,10 +56,11 @@ react: React={
     this.itemService.getCommentItems().subscribe(comments=>{
       this.comments = comments;
     })
-    this.itemService.getReactItems().subscribe(reacts=>{
-      this.reacts = reacts;
+    this.itemService.getLikes().subscribe(likes => {
+      this.likes = likes;
     })
   }
+  
   deleteItem(event, post: Item){
     this.clearState();
     this.itemService.deleteItem(post);
@@ -90,16 +94,21 @@ react: React={
     this.itemService.deleteComm(comment);
   }
   //Reacts
-  upsDowns(post: Item){
-    post.ups +=1;
-    console.log("Ups: "+post.ups);
-    console.log("Downs: "+post.downs);
+  ups(post: Item, userEmail){
+    if(this.like.id.includes(`${userEmail}_${post.id}`)){
+      alert('You already liked the post');
+    }else{
+    this.like.addCount = 1;
+    post.ups += this.like.addCount;
+    this.like.postID = post.id;
+    this.like.userEmail = userEmail;
+    this.like.id = `${userEmail}_${post.id}`;
     this.itemService.updateItem(post);
+    this.itemService.setLikes(this.like.id, this.like.userEmail, this.like.postID,this.like.addCount);
+    }
 }
-  upsDowns2(post: Item){
+  downs(post: Item){
     post.downs +=1;
-    console.log("Ups: "+post.ups);
-    console.log("Downs: "+post.downs);
     this.itemService.updateItem(post);
   }
   showComments(event, post: Item){

@@ -39,6 +39,7 @@ import { BulletinComponent } from './bulletin/bulletin.component';
 
 
 
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -69,7 +70,6 @@ import { BulletinComponent } from './bulletin/bulletin.component';
         ContactComponent,
         UserProfileComponent,
         BulletinComponent,
-
 
        
     ],

@@ -14,7 +14,6 @@ export class AppComponent {
   constructor(public auth: AuthenticationService,private router: Router) {
   }
   ngOnInit(){
-    
   }
   login(){
     this.router.navigate(['/login']);

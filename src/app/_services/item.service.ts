@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {Item, CommentsItem, React} from '../_models/item';
-import { Observable } from 'rxjs';
+import {Item, CommentsItem, Likes} from '../_models/item';
+import { Observable, interval } from 'rxjs';
 import { map } from "rxjs/operators";
 
 @Injectable({
@@ -16,9 +16,9 @@ export class ItemService {
   comments: Observable<CommentsItem[]>;
   postDoc2: AngularFirestoreDocument<CommentsItem>;
 
-  itemsCollection3: AngularFirestoreCollection<React>;
-  reacts: Observable<React[]>;
-  postDoc3: AngularFirestoreDocument<React>;
+  itemsCollection3 : AngularFirestoreCollection<Likes>;
+  likes: Observable<Likes[]>;
+  postDoc3:AngularFirestoreDocument<Likes>;
 
   constructor(public afs: AngularFirestore) { 
     this.itemsCollection = this.afs.collection('posts', ref => ref.orderBy('timeDate', 'desc'));
@@ -37,10 +37,10 @@ export class ItemService {
         return data2;
       });
     }));
-    this.itemsCollection3 = this.afs.collection('reacts');
-    this.reacts = this.itemsCollection3.snapshotChanges().pipe(map(changes3 => {
+    this.itemsCollection3 = this.afs.collection('likes');
+    this.likes = this.itemsCollection3.snapshotChanges().pipe(map(changes3 => {
       return changes3.map(aaa=>{
-        const data3 = aaa.payload.doc.data() as React
+        const data3 = aaa.payload.doc.data() as Likes
         data3.id = aaa.payload.doc.id;
         return data3;
       });
@@ -73,19 +73,28 @@ export class ItemService {
     this.postDoc2.delete();
   }
   //reacts
-  getReactItems(){
-    return this.reacts;
+  getLikes(){
+    return this.likes;
   }
-  addUps(post: Item ){
-    this.postDoc = this.afs.doc(`posts/${post.id}`);
+  updateLikes(like:Likes){
+    this.postDoc3 = this.afs.doc(`likes/${like.id}`);
+    this.postDoc3.update(like);
+  }
+  addUps(like: Likes){
+    this.itemsCollection3.add(like);
+  }
+  addUpsPost(post:Item){
+    this.postDoc = this.afs.doc(`posts/${post.id}`)
     this.postDoc.update(post);
   }
-  addDowns(post: Item){
-    this.postDoc = this.afs.doc(`posts/${post.id}`);
-    this.postDoc.update(post);
+  addDowns(like: Likes){
+    this.postDoc3 = this.afs.doc(`likes/${like.id}`);
+    this.postDoc3.update(like);
   }
-  updateReact(react:React){
-    this.itemsCollection3.add(react);
+  setLikes(id,userEmail,postID,addCount){
+    const like: Likes = { id, userEmail, postID, addCount };
+    const likesPath = `likes/${like.userEmail}_${like.postID}`;
+    return this.afs.doc(likesPath).set(like);
   }
 } 
 
