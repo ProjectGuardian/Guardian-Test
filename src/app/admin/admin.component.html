@@ -16,3 +16,23 @@
         <app-bulletin></app-bulletin>
     </div>
 </div>
+<div class="rightCon">
+    <div class="con1">
+        <div class="matchSched2">
+            <form (ngSubmit)="onSubmit()" class="form">
+                <div class="input-field">
+                    <input type="text" placeholder="Input match number . . ." [(ngModel)]="sched.id" name="matchnumber"  class="codenamefield">
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Input highlight link . . ." [(ngModel)]="sched.imgLink" name="link"  class="codenamefield">
+                </div>
+                <div class="input-field">
+                    <button class="btnSched" type="submit">Post Highlight</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="con2">
+    <app-tournament-feature></app-tournament-feature>
+    </div>
+</div>
