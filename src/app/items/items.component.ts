@@ -1,6 +1,6 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import {ItemService} from '../_services/item.service';
-import {Item, CommentsItem, Likes, User} from '../_models/item'
+import {Item, CommentsItem, Likes} from '../_models/item'
 import { AuthenticationService } from '../authentication.service';
 import { interval, Observable } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -14,7 +14,6 @@ export class ItemsComponent implements OnInit {
 likes: Likes[];
 comments: CommentsItem[];
 posts: Item[];
-users: User[];
 search;
 firstName: string;
 commentsV:boolean = false;
@@ -47,9 +46,7 @@ like: Likes = {
   userEmail: '',
   addCount:0
 }
-user: User={
-  userID: ''
-}
+
   constructor(public auth: AuthenticationService, private itemService: ItemService,private afs: AngularFirestore) { 
   }
 

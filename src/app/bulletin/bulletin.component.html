@@ -2,16 +2,13 @@
     <div class="namecard">
         <p><strong>UPCOMING </strong>MATCHES</p>
     </div>
-                <div class="upcoming-section">
-                    <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/UpcomingMatch.jpg?raw=true" class="MatchLOL">
-                </div>
-
-                <div class="upcoming-section">
-                    <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/UpcomingMatchDota.jpg?raw=true" class="MatchLOL">
-                </div>
-                
-                <div class="upcoming-section">
-                    <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/UpcomingMatchML.jpg?raw=true" class="MatchLOL">
+                <div class="upcoming-section" *ngFor="let sched of scheds">
+                    <div>
+                        <img src={{this.sched.imgLink}} class="MatchLOL">
+                    </div>
+                    <div *ngIf="auth.getUserDetails()?.email == 'Admin'">
+                        <button class="btnDelete" (click)="deleteSched($event, sched)"><img src="/assets/delete.png" class="icon"></button>
+                    </div>
                 </div>
 </div>
 

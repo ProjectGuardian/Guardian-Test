@@ -17,7 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register';
 import { AlertComponent } from './_components';
-// import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './admin/admin.component';
 
 import { environment } from 'environments/environment.prod';
 import { ItemsComponent } from './items/items.component';
@@ -58,7 +58,7 @@ import { BulletinComponent } from './bulletin/bulletin.component';
         LoginComponent,
         RegisterComponent,
         AlertComponent,
-        // AdminComponent,
+        AdminComponent,
         ItemsComponent,
         AddPostComponent,
         AboutComponent,

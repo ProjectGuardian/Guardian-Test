@@ -1,37 +1,30 @@
-// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ItemService } from '@/_services/item.service';
+import { Sched } from '@/_models/item';
+import { Router } from '@angular/router';
 
-// import { first } from 'rxjs/operators';
+@Component({
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.less']
+})
+export class AdminComponent implements OnInit {
+  scheds:Sched[];
+  sched: Sched ={
+    id:'',
+    imgLink:''
+  }
+  constructor(private router : Router, private itemService: ItemService) {
+               }
+  ngOnInit(): void {
+    this.itemService.getSched().subscribe(scheds => {
+      this.scheds = scheds;
+    })
+  }
+  onSubmit(){
+    this.itemService.addLink(this.sched);
+    this.sched.imgLink = '';
+    this.sched.id = '';
+  }
+}
 
-// import { User } from '../_models/user';
-// import { UserService, AuthenticationService } from '../_services';
-// import { Item } from '@/_models/item';
-// @Component({
-//   selector: 'app-admin',
-//   templateUrl: './admin.component.html',
-//   styleUrls: ['./admin.component.less']
-// })
-// export class AdminComponent implements OnInit {
-//   currentUser: User;
-//   users = [];
-//   search;
-//   firstName:string;
-//   constructor(private authenticationService: AuthenticationService,
-//               private userService: UserService) {
-//               this.currentUser = this.authenticationService.currentUserValue;
-//                }
-
-//   ngOnInit(): void {
-//     this.loadAllUsers();
-//   }
-//   private loadAllUsers() {
-//     this.userService.getAll()
-//         .pipe(first())
-//         .subscribe(users => this.users = users);
-// }
-// deleteUser(id: number) {
-//   this.userService.delete(id)
-//       .pipe(first())
-//       .subscribe(() => this.loadAllUsers());
-// }
-
-// }

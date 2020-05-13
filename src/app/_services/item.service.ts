@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {Item, CommentsItem, Likes, User} from '../_models/item';
+import {Item, CommentsItem, Likes, Sched} from '../_models/item';
 import { Observable, interval } from 'rxjs';
 import { map } from "rxjs/operators";
 
@@ -20,6 +20,10 @@ export class ItemService {
   itemsCollection3 : AngularFirestoreCollection<Likes>;
   likes: Observable<Likes[]>;
   postDoc3:AngularFirestoreDocument<Likes>;
+
+  itemsCollection4 : AngularFirestoreCollection<Sched>;
+  scheds: Observable<Sched[]>;
+  postDoc4:AngularFirestoreDocument<Sched>;
 
   constructor(public afs: AngularFirestore) { 
     this.itemsCollection = this.afs.collection('posts', ref => ref.orderBy('timeDate', 'desc'));
@@ -44,6 +48,14 @@ export class ItemService {
         const data3 = aaa.payload.doc.data() as Likes
         data3.id = aaa.payload.doc.id;
         return data3;
+      });
+    }));
+    this.itemsCollection4 = this.afs.collection('scheds', ref2 => ref2.orderBy('id', 'asc'));
+    this.scheds = this.itemsCollection4.snapshotChanges().pipe(map(changes4 => {
+      return changes4.map(aaaa=>{
+        const data4 = aaaa.payload.doc.data() as Sched
+        data4.id = aaaa.payload.doc.id;
+        return data4;
       });
     }));
   }
@@ -96,6 +108,17 @@ export class ItemService {
     const like: Likes = { id, userEmail, postID, addCount };
     const likesPath = `likes/${like.userEmail}_${like.postID}`;
     return this.afs.doc(likesPath).set(like);
+  }
+  //SCHED
+  getSched(){
+    return this.scheds;
+  }
+  addLink(sched:Sched){
+    this.itemsCollection4.add(sched);
+  }
+  deleteSched(sched:Sched){
+    this.postDoc4 = this.afs.doc(`scheds/${sched.id}`);
+    this.postDoc4.delete();
   }
 } 
 
