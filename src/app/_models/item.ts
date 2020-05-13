@@ -25,3 +25,7 @@ export interface Item{
     id:any;
     imgLink:any;
   }
+  export interface Vid{
+    id:any;
+    vidLink:any;
+  }
