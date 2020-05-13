@@ -35,6 +35,14 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AuthenticationService } from './authentication.service';
 import { BulletinComponent } from './bulletin/bulletin.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -51,6 +59,13 @@ import { BulletinComponent } from './bulletin/bulletin.component';
         AngularFirestoreModule,
         FormsModule,
         Ng2SearchPipeModule,
+        BrowserAnimationsModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
     ],
     declarations: [
         AppComponent,
@@ -70,6 +85,7 @@ import { BulletinComponent } from './bulletin/bulletin.component';
         ContactComponent,
         UserProfileComponent,
         BulletinComponent,
+        SideNavComponent,
 
        
     ],

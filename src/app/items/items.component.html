@@ -1,7 +1,7 @@
 <div *ngIf="posts?.length > 0;else noItems">
     <div class="searchBarClass">
     <input type="text" name="search" autocomplete="off" [(ngModel)]="search" class="searchBar" placeholder="Search a post . . . .">
-    </div>
+</div>
     <div *ngFor="let post of posts | filter:search" class="collection">
         <div class="main-container">
         <div class="post-container">
