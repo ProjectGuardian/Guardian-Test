@@ -28,10 +28,10 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "styles.less"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

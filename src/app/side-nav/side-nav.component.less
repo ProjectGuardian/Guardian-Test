@@ -1,0 +1,31 @@
+.sidenav-container {
+  height: 100%;
+  width: 100%;
+}
+
+.sidenav {
+  width: 80%;
+  background: white;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  z-index: 10;
+}
+
+.mat-toolbar.mat-primary {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 0%;
+  
+}
+//mobile responsive
+@media screen and (min-width:960px){
+.sidenav{
+  display: none;
+}
+} 
