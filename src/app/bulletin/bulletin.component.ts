@@ -26,9 +26,6 @@ export class BulletinComponent implements OnInit {
     this.itemService.getSched().subscribe(scheds => {
       this.scheds = scheds;
     })
-    if(this.sched.id == '1'){
-      var matchno = this.sched.id;
-    }
   }
   blogPage(){
     this.router.navigate(['/update-page']);

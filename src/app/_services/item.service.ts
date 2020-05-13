@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {Item, CommentsItem, Likes, Sched} from '../_models/item';
+import {Item, CommentsItem, Likes, Sched, Vid} from '../_models/item';
 import { Observable, interval } from 'rxjs';
 import { map } from "rxjs/operators";
 
@@ -24,6 +24,10 @@ export class ItemService {
   itemsCollection4 : AngularFirestoreCollection<Sched>;
   scheds: Observable<Sched[]>;
   postDoc4:AngularFirestoreDocument<Sched>;
+
+  itemsCollection5 : AngularFirestoreCollection<Vid>;
+  vids: Observable<Vid[]>;
+  postDoc5:AngularFirestoreDocument<Vid>;
 
   constructor(public afs: AngularFirestore) { 
     this.itemsCollection = this.afs.collection('posts', ref => ref.orderBy('timeDate', 'desc'));
@@ -56,6 +60,14 @@ export class ItemService {
         const data4 = aaaa.payload.doc.data() as Sched
         data4.id = aaaa.payload.doc.id;
         return data4;
+      });
+    }));
+    this.itemsCollection5 = this.afs.collection('vids');
+    this.vids = this.itemsCollection5.snapshotChanges().pipe(map(changes5 => {
+      return changes5.map(aaaaa=>{
+        const data5 = aaaaa.payload.doc.data() as Vid
+        data5.id = aaaaa.payload.doc.id;
+        return data5;
       });
     }));
   }
@@ -119,6 +131,17 @@ export class ItemService {
   deleteSched(sched:Sched){
     this.postDoc4 = this.afs.doc(`scheds/${sched.id}`);
     this.postDoc4.delete();
+  }
+  //VIDS
+  getVid(){
+    return this.vids;
+  }
+  addVid(vid:Vid){
+    this.itemsCollection5.add(vid);
+  }
+  deleteVid(vid:Vid){
+    this.postDoc5 = this.afs.doc(`vids/${vid.id}`);
+    this.postDoc5.delete();
   }
 } 
 
