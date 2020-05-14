@@ -21,4 +21,7 @@ marq: Marqs = {
       this.marqs = marqs;
     })
   }
+  deleteNews(event, marq: Marqs){
+    this.itemService.deleteMarqs(marq);
+  }
 }
