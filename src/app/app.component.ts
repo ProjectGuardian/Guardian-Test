@@ -27,14 +27,12 @@ export class AppComponent {
     document.getElementById('trophyIcon').style.backgroundColor = "transparent";
     document.getElementById('blogIcon').style.backgroundColor = "transparent";
     document.getElementById('contactIcon').style.backgroundColor = "transparent";
-    document.getElementById('dashboard').style.backgroundColor = "transparent";
   }
   tournamentPage(){
     document.getElementById('trophyIcon').style.backgroundColor = "rgba(190, 190, 190, 0.116)";
     document.getElementById('homeIcon').style.backgroundColor = "transparent";
     document.getElementById('blogIcon').style.backgroundColor = "transparent";
     document.getElementById('contactIcon').style.backgroundColor = "transparent";
-    document.getElementById('dashboard').style.backgroundColor = "transparent";
     this.router.navigate(['/tournament-home']);
 }
   blogPage(){
@@ -42,7 +40,6 @@ export class AppComponent {
     document.getElementById('trophyIcon').style.backgroundColor = "transparent";
     document.getElementById('homeIcon').style.backgroundColor = "transparent";
     document.getElementById('contactIcon').style.backgroundColor = "transparent";
-    document.getElementById('dashboard').style.backgroundColor = "transparent";
     this.router.navigate(['/update-page']);
   }
   contactPage(){
@@ -50,15 +47,9 @@ export class AppComponent {
     document.getElementById('trophyIcon').style.backgroundColor = "transparent";
     document.getElementById('blogIcon').style.backgroundColor = "transparent";
     document.getElementById('homeIcon').style.backgroundColor = "transparent";
-    document.getElementById('dashboard').style.backgroundColor = "transparent";
       this.router.navigate(['/contact']);
   }
   dashboard(){
-    document.getElementById('dashboard').style.backgroundColor = "rgba(190, 190, 190, 0.116)";
-    document.getElementById('trophyIcon').style.backgroundColor = "transparent";
-    document.getElementById('blogIcon').style.backgroundColor = "transparent";
-    document.getElementById('homeIcon').style.backgroundColor = "transparent";
-    document.getElementById('contactIcon').style.backgroundColor = "transparent";
       this.router.navigate(['/Admin']);
   }
   logout() {
