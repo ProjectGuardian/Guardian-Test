@@ -1,5 +1,6 @@
-<div class="display">
-    <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/image/tournament.jpg?raw=true" alt="">
+<div class="display" *ngFor="let bracket of brackets">
+    <img src={{this.bracket.bLink}} alt="">
+    <button class="btnDelete" (click)="deleteBracket($event, bracket)"><img src="/assets/delete.png" class="icon"></button>
 </div>
 
 <div class="info-main-grid">
