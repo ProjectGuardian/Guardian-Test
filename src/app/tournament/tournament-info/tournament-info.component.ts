@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from '@/_services/item.service';
 import { Sched, Vid, Brackets, Marqs } from '@/_models/item';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '@/authentication.service';
 @Component({
   selector: 'app-tournament-info',
   templateUrl: './tournament-info.component.html',
@@ -13,7 +14,7 @@ export class TournamentInfoComponent implements OnInit {
     id:'',
     bLink:''
   }
-  constructor(private router : Router, private itemService: ItemService) { }
+  constructor(private router : Router, private itemService: ItemService, public auth : AuthenticationService) { }
 
   ngOnInit(): void {
     this.itemService.getBracket().subscribe(brackets=>{

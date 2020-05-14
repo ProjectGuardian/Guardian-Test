@@ -1,15 +1,15 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { AuthenticationService, TokenPayload } from "../authentication.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { AlertService } from "@/_services/alert.service";
+import { AlertService } from "../_services/alert.service";
 import { first } from "rxjs/operators";
 
 @Component({
   templateUrl: "./register.component.html",
   styleUrls:['./register.component.less']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
   registerForm: FormGroup;
     loading = false;
     submitted = false;
@@ -30,9 +30,9 @@ export class RegisterComponent {
 
 ngOnInit() {
         this.registerForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            username: ['', Validators.required],
+            first_name: ['', Validators.required],
+            last_name: ['', Validators.required],
+            email: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
             college: ['', Validators.required]
         });
@@ -52,8 +52,10 @@ ngOnInit() {
         }
 
         this.loading = true;
-    this.auth.register(this.credentials).pipe(first()).subscribe(
-      () => {
+    this.auth.register(this.registerForm.value)
+      .pipe(first())
+      .subscribe(
+      data => {
         this.alertService.success('Registration successful', true);
         this.router.navigate(['/login']);
       },

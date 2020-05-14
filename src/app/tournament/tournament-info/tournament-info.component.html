@@ -1,6 +1,6 @@
 <div class="display" *ngFor="let bracket of brackets">
     <img src={{this.bracket.bLink}} alt="">
-    <button class="btnDelete" (click)="deleteBracket($event, bracket)"><img src="/assets/delete.png" class="icon"></button>
+    <button class="btnDelete" (click)="deleteBracket($event, bracket)" *ngIf="this.auth.getUserDetails().email == 'Admin'"><img src="/assets/delete.png" class="icon"></button>
 </div>
 
 <div class="info-main-grid">
