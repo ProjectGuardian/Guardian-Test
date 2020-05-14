@@ -46,7 +46,7 @@ img {
 	  width: 250px;
 	  height: 250px;
 	//   float: left;
-	margin: 0 auto;
+	margin-left: -10px;
 }
   
   .inner-width{
@@ -54,9 +54,6 @@ img {
 	margin: auto;
 	padding: 0 20px;
   }
-
-
-  
   .contact-section h1{
 	font-size: 35px;
 	color:rgb(248, 133, 24);
@@ -66,7 +63,6 @@ img {
 	font-weight: 400;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
-  
   .name,.email,.message{
 	background: none;
 	border:none;
@@ -78,19 +74,14 @@ img {
 	margin-bottom: 40px;
 
   }
-
   .name{
 	float: left;
 	width: 270px;
   }
-  
   .email{
 	float: right;
 	width: 270px;
   }
-
-
-  
   .message{
 	min-width: 100%;
 	max-width: 100%;
@@ -106,17 +97,6 @@ img {
   ::-webkit-scrollbar {
     width: 12px;
 }
- 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    border-radius: 10px;
-}
- 
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
-
 .btn-submit{
 		text-decoration: none;
 		background: none;
@@ -134,8 +114,6 @@ img {
 	background: rgb(248, 133, 24);
 	color: #fff;
   }
-  
-
 //footer
 .footer{
     bottom: 0;
@@ -279,58 +257,59 @@ img {
 	margin-bottom: 5px;
 }
 
-  
- 
-  
-
-
-
 /* Mobile Responsive */
 @media screen and (max-width: 1080px) {
 
 .hero-wrap img{
 	width: 120%;
 }
-.footer-center p{
-	width: 100%;
+.contact h1 {
+	margin-top: 5px;
+	font-size: 60px;
 }
-
-input.name{
-		font-size: 20px;
+.contact p {
+	font-size: 30px;
+	background-repeat: no-repeat;
 }
-
-input.email{
-	font-size: 20px;
+.contact-section h1 {
+	font-size: 45px;
 }
-textarea.message{
-	font-size: 20px;
+input.name {
+	font-size: 30px;
+}
+input.email {
+font-size: 30px;
+}
+textarea.message {
+font-size: 30px;
 }
 
 .btn-submit{
-	font-size: 25px;
+font-size: 28px;
 }
 
-
+//footer
+.footer-distributed h3 {
+	font-size: 45px;
+}
+.footer-links label {
+	font-size: 25px;
+}
+.footer-center p{
+	width: 100%;
+}
 .footer-left{
 	padding: 7px;
 	font-size: 20px;
 }
-
-.footer-company-name{
-	font-size: 20px;
+.footer-company-name {
+	font-size: 25px;
 }
-
-
-
-
 }
-
-
 
 @media screen and (max-width: 768px) {
-
 	.contact h1{
-		margin-top: 100px;
+		margin-top: 30px;
 	}
 
 	.footer-center p{
@@ -362,8 +341,6 @@ textarea.message{
 		font-size: 20px;
 	}
 
-	
-
 }
 
 @media screen and (max-width:600px){
@@ -371,7 +348,6 @@ textarea.message{
 	  width: 100%;
 	}
   }
-
 
 
 @media  screen and (max-width: 320px) {
