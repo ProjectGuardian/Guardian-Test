@@ -22,7 +22,9 @@ img {
     text-align: center;
     font-size: 50px;
     color: rgb(248, 133, 24);
-    margin:0 auto;
+	margin:0 auto;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
     
 }
 .contact p {
@@ -37,7 +39,15 @@ img {
 	background-image: url(https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/background1234.jpg?raw=true) no-repeat;
 	padding: 80px 0;
 	text-align: center;
+	margin-top: -100px;
   }
+
+  .contact-section img{
+	  width: 250px;
+	  height: 250px;
+	//   float: left;
+	margin: 0 auto;
+}
   
   .inner-width{
 	max-width: 600px;
@@ -48,12 +58,13 @@ img {
 
   
   .contact-section h1{
-	font-size: 20px;
+	font-size: 35px;
 	color:rgb(248, 133, 24);
 	margin-bottom: 40px;
 	text-transform: uppercase;
 	letter-spacing: 4px;
 	font-weight: 400;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   
   .name,.email,.message{
@@ -67,10 +78,7 @@ img {
 	margin-bottom: 40px;
 
   }
-// .inner-width input{
-// 	color: rgb(248, 133, 24);
-// }
-  
+
   .name{
 	float: left;
 	width: 270px;
@@ -108,7 +116,7 @@ img {
 .btn-submit{
 		text-decoration: none;
 		background: none;
-		color: #70a1ff;
+		color: rgb(248, 133, 24);
 		border: 1px solid white;
 		padding: 12px 40px;
 		border-radius: 8px;
@@ -274,21 +282,84 @@ img {
 
 
 /* Mobile Responsive */
+@media screen and (max-width: 1080px) {
+
+.hero-wrap img{
+	width: 120%;
+}
+.footer-center p{
+	width: 100%;
+}
+
+input.name{
+		font-size: 20px;
+}
+
+input.email{
+	font-size: 20px;
+}
+textarea.message{
+	font-size: 20px;
+}
+
+.btn-submit{
+	font-size: 25px;
+}
+
+
+.footer-left{
+	padding: 7px;
+	font-size: 20px;
+}
+
+.footer-company-name{
+	font-size: 20px;
+}
+
+
+
+
+}
+
+
 
 @media screen and (max-width: 768px) {
-	.contact-Card {
-		width: 700px;
-		height: 500px;
+
+	.contact h1{
+		margin-top: 100px;
+	}
+
+	.footer-center p{
+		width: 100%;
+	}
+
+	input.name{
+			font-size: 20px;
+	}
+
+	input.email{
+		font-size: 20px;
+}
+	textarea.message{
+		font-size: 20px;
 	}
 
 	.btn-submit{
-		margin-left: 120px;
+		font-size: 25px;
 	}
 
-	#mailMessage{
-		width: 250%;
-		padding: 7px 0px;
+
+	.footer-left{
+		padding: 7px;
+    	font-size: 20px;
 	}
+
+	.footer-company-name{
+		font-size: 20px;
+	}
+
+	
+
 }
 
 @media screen and (max-width:600px){
@@ -300,13 +371,8 @@ img {
 
 
 @media  screen and (max-width: 320px) {
-	.contact-Card{
-		grid-template-columns: repeat(1, 1fr);
-		width: 300px;
-	}
-}
 
-p label{
-	cursor: pointer;
+
+
 }
 	
