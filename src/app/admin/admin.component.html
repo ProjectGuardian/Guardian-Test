@@ -17,13 +17,33 @@
         <form (ngSubmit)="onSubmit2()" class="form">
             <label class="subject">Match</label><label class="subject2">Highlights</label>
             <div class="input-field">
-                <input type="text" placeholder="Input match number . . ." [(ngModel)]="vid.id" name="matchnumber"  class="codenamefield">
-            </div>
-            <div class="input-field">
                 <input type="text" placeholder="Input highlight link . . ." [(ngModel)]="vid.vidLink" name="vidlink"  class="codenamefield">
             </div>
             <div class="input-field">
                 <button class="btnSched" type="submit">Post Highlight</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="matchSched">
+        <form (ngSubmit)="onSubmit3()" class="form">
+            <label class="subject">Tournament</label><label class="subject2">Bracket</label>
+            <div class="input-field">
+                <input type="text" placeholder="Input bracket link . . ." [(ngModel)]="bracket.bLink" name="bracketLink"  class="codenamefield">
+            </div>
+            <div class="input-field">
+                <button class="btnSched" type="submit">Post Bracket</button>
+            </div>
+        </form>
+    </div>
+    <div class="matchSched">
+        <form (ngSubmit)="onSubmit4()" class="form">
+            <label class="subject">News</label><label class="subject2">Update</label>
+            <div class="input-field">
+                <input type="text" placeholder="Input news update . . ." [(ngModel)]="marq.marqText" name="marqText"  class="codenamefield">
+            </div>
+            <div class="input-field">
+                <button class="btnSched" type="submit">Post News</button>
             </div>
         </form>
     </div>

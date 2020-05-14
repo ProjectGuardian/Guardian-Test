@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {Item, CommentsItem, Likes, Sched, Vid} from '../_models/item';
+import {Item, CommentsItem, Likes, Sched, Vid, Brackets, Marqs} from '../_models/item';
 import { Observable, interval } from 'rxjs';
 import { map } from "rxjs/operators";
 
@@ -28,6 +28,14 @@ export class ItemService {
   itemsCollection5 : AngularFirestoreCollection<Vid>;
   vids: Observable<Vid[]>;
   postDoc5:AngularFirestoreDocument<Vid>;
+
+  itemsCollection6 : AngularFirestoreCollection<Brackets>;
+  brackets: Observable<Brackets[]>;
+  postDoc6:AngularFirestoreDocument<Brackets>;
+
+  itemsCollection7 : AngularFirestoreCollection<Marqs>;
+  marqs: Observable<Marqs[]>;
+  postDoc7:AngularFirestoreDocument<Marqs>;
 
   constructor(public afs: AngularFirestore) { 
     this.itemsCollection = this.afs.collection('posts', ref => ref.orderBy('timeDate', 'desc'));
@@ -68,6 +76,24 @@ export class ItemService {
         const data5 = aaaaa.payload.doc.data() as Vid
         data5.id = aaaaa.payload.doc.id;
         return data5;
+      });
+    }));
+
+    this.itemsCollection6 = this.afs.collection('brackets');
+    this.brackets = this.itemsCollection6.snapshotChanges().pipe(map(changes6 => {
+      return changes6.map(aaaaaa=>{
+        const data6 = aaaaaa.payload.doc.data() as Brackets
+        data6.id = aaaaaa.payload.doc.id;
+        return data6;
+      });
+    }));
+
+    this.itemsCollection7 = this.afs.collection('marqs');
+    this.marqs = this.itemsCollection7.snapshotChanges().pipe(map(changes7 => {
+      return changes7.map(aaaaaaa=>{
+        const data7 = aaaaaaa.payload.doc.data() as Marqs
+        data7.id = aaaaaaa.payload.doc.id;
+        return data7;
       });
     }));
   }
@@ -143,6 +169,29 @@ export class ItemService {
     this.postDoc5 = this.afs.doc(`vids/${vid.id}`);
     this.postDoc5.delete();
   }
-} 
+  //BRACKETS{
+    getBracket(){
+      return this.brackets;
+    }
+    addBracket(bracket:Brackets){
+      this.itemsCollection6.add(bracket);
+    }
+    deleteBracket(bracket:Brackets){
+      this.postDoc6 = this.afs.doc(`brackets/${bracket.id}`);
+      this.postDoc6.delete();
+    }
+    //MARQUEE
+    getMarqs(){
+      return this.marqs;
+    }
+    addMarqs(marq:Marqs){
+      this.itemsCollection7.add(marq);
+    }
+    deleteMarqs(marq:Marqs){
+      this.postDoc7 = this.afs.doc(`marqs/${marq.id}`);
+      this.postDoc7.delete();
+    }
+  }
+
 
 

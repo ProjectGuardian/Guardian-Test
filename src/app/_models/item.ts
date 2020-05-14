@@ -29,3 +29,11 @@ export interface Item{
     id:any;
     vidLink:any;
   }
+  export interface Brackets{
+    id:any;
+    bLink:any;
+  }
+  export interface Marqs{
+    id:any;
+    marqText:any;
+  }

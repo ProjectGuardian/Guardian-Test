@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '@/_services/item.service';
-import { Sched, Vid } from '@/_models/item';
+import { Sched, Vid, Brackets, Marqs } from '@/_models/item';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,6 +18,16 @@ export class AdminComponent implements OnInit {
   vid: Vid={
     id:'',
     vidLink:''
+  }
+  brackets: Brackets[];
+  bracket: Brackets={
+    id:'',
+    bLink:''
+  }
+  marqs: Marqs[];
+  marq: Marqs ={
+    id:'',
+    marqText:''
   }
   constructor(private router : Router, private itemService: ItemService) {
                }
@@ -38,6 +48,14 @@ export class AdminComponent implements OnInit {
     this.itemService.addVid(this.vid);
     this.vid.vidLink = '';
     this.vid.id = '';
+  }
+  onSubmit3(){
+    this.itemService.addBracket(this.bracket)
+    this.bracket.bLink = '';
+  }
+  onSubmit4(){
+    this.itemService.addMarqs(this.marq);
+    this.marq.marqText = '';
   }
 }
 
