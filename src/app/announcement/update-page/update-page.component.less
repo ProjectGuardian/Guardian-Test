@@ -7,6 +7,7 @@
     background-size: cover;
     overflow: hidden;
 }
+//Display Image 
 .heroImage img{
     width: 100%;
 }
@@ -20,6 +21,7 @@
     justify-content: center;
     text-align: center;
 }
+//Main Title 
 .Tups {
     background-image: url(https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/updates.jpg?raw=true);
     background-repeat: no-repeat;
@@ -40,7 +42,7 @@
     justify-items: center;
     width: 100%;
 }
-//POST #1
+//POST
 .post {
     width: 358px;
     position: relative;
@@ -90,7 +92,6 @@
     padding: 10px;
 }
 /*Moibile Responsive*/
-
 @media screen and (max-width: 1080px) {
     .heroImage img{
         margin-top: 70px;
@@ -126,7 +127,6 @@
         padding: 30px;
     }
 }
-
 @media screen and (max-width: 768px) {
     .Tups {
         font-size: 50px;
@@ -141,8 +141,7 @@
         padding: 30px;
     }
 }
-
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
     .Tups {
         font-size: 25px;
         padding: 10px;
@@ -158,5 +157,15 @@
     .message-post p {
         font-size: 1.2rem;
         padding: 10px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .Tups {
+        font-size: 20px;
+    }
+    .post-title h1 {
+        font-size: 100%;
+        padding-left: 20px;
+        padding-top: 8px;
     }
 }

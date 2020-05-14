@@ -1,10 +1,9 @@
 .sidenav-container {
-  height: 100%;
   width: 100%;
 }
 
 .sidenav {
-  width: 80%;
+  width: 100%;
   background: white;
 }
 
@@ -25,8 +24,20 @@
   
 }
 //mobile responsive
-@media screen and (min-width:960px){
-.sidenav{
-  display: none;
+@media screen and (min-width:961px){
+  .nav-button{
+    display: none;
+  }
 }
-} 
+
+@media screen and (max-width:599px){
+  .mat-toolbar.mat-primary{
+    top: 4px;
+  }
+}
+
+@media screen and (max-width:426px){
+  .mat-toolbar.mat-primary{
+    right: -10px;
+  }
+}
