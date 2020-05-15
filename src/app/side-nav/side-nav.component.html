@@ -12,11 +12,12 @@
       </div>
     
     <mat-nav-list>
-      <a mat-list-item (click)="home()">Home</a>
-      <a mat-list-item (click)="tournamentPage()">Tournament</a>
-      <a mat-list-item (click)="blogPage()">Updates</a>
-      <a mat-list-item (click)="contactPage()">Contacts</a>
+      <a mat-list-item (click)="home()" (click)="drawer.close()">Home</a>
+      <a mat-list-item (click)="tournamentPage()" (click)="drawer.close()">Tournament</a>
+      <a mat-list-item (click)="blogPage()" (click)="drawer.close()">Updates</a>
+      <a mat-list-item (click)="contactPage()" (click)="drawer.close()">Contacts</a>
     </mat-nav-list>
+      <app-bulletin class="bulletin"></app-bulletin> 
   </mat-sidenav>
 
 

@@ -4,12 +4,16 @@
 
 .sidenav {
   width: 100%;
-  background: white;
+  background: rgb(44, 44, 44);
+  color: white;
 }
 .close-button{
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+button:focus {
+  outline:0;
 }
 .head{
   background: rgb(27, 27, 27);
@@ -36,6 +40,29 @@
   width: 0%;
   background: inherit;
   
+}
+.mat-list-base .mat-list-item{
+  font-size: 1rem;
+}
+
+:host ::ng-deep .bulletin .bulletinPanel{
+  position: relative;
+  top: 1px;
+  display: block;
+  width: 73%;
+}
+:host ::ng-deep .bulletin .upcoming-section{
+  width: 127%;
+  height: auto;
+  padding: 3%;
+}
+:host ::ng-deep .bulletin p{
+  font-size: 4vw;
+}
+.mat-list-item{
+  overflow: hidden;
+  margin-right: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 //mobile responsive
 @media screen and (min-width:961px){
