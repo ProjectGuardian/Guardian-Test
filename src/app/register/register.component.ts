@@ -59,8 +59,8 @@ ngOnInit() {
         this.alertService.success('Registration successful', true);
         this.router.navigate(['/login']);
       },
-      error => {
-        this.alertService.error(error);
+      err => {
+        this.alertService.error(err);
         this.loading = false;
       }
     );

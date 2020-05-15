@@ -54,14 +54,14 @@ get f() { return this.loginForm.controls; }
     this.auth.login(this.loginForm.value)
     .pipe(first())
     .subscribe(
-      () => {
+      data => {
       if(this.f.email.value == 'Admin'){
           this.router.navigate([this.f.email.value]);
       }else
         this.router.navigateByUrl('/home')
       },
-      error => {
-        this.alertService.error(error);
+      err => {
+        this.alertService.error('Login Error: Username or Password is Invalid');
         this.loading = false;
       }
     )

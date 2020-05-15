@@ -28,7 +28,7 @@ export interface TokenPayload {
   college:string
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   private token: string
 
