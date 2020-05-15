@@ -46,20 +46,54 @@ button:focus {
 }
 :host ::ng-deep .user .profileCard{
   display: block;
+  position: relative;
+  top: 1px;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  width: 50%;
+  width: 100%;
   float: none;
-  height: 100%;
+  height: 48vmax;
   background-image: url(https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/ResizedUserBG.jpg?raw=true);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+}
+:host ::ng-deep .user .badges{
+  display: flex;
+  position: relative;
+  top: -19px;
+  border-left: 2px solid #f88518;
+  border-right: 2px solid #f88518;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: unset;
+  border-radius: 10px;
+  background-image: url(https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/background1234.jpg?raw=true);
+}
+:host ::ng-deep .user h6{
+  position: relative;
+  z-index: 2;
+  top: 29px;
+  font-size: 23px;
+}
+:host ::ng-deep .user .starbadge{
+  margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+:host ::ng-deep .user .collegebadge{
+  display: flex;
+  width: 100%;
+  margin: 0;
 }
 
 :host ::ng-deep .bulletin .bulletinPanel{
   position: relative;
-  top: 1px;
+  top: 16vw;
   display: block;
   width: 73%;
 }
