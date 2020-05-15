@@ -1,33 +1,39 @@
 <div class="jumbotron">
-    <alert></alert>
-<div class="flexbox">
-    <div><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/auplogo.png?raw=true" alt="AUPlogo" class="logo1"></div>
-    <div><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/gicon.png?raw=true" alt="GuardianLogo" class="logo2"></div>
-</div>
-<div>
-<h2 class="h2">Login</h2>
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-    <div class="form-group">
-        <label for="email">Username</label>
-        <input type="email" formControlName="email" class="form-control" [(ngModel)]="credentials.email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-            <div *ngIf="f.email.errors.required">Username is required</div>
+    <div class="flexbox">
+        <div><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/auplogo.png?raw=true"
+                alt="AUPlogo" class="logo1"></div>
+        <div><img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/gicon.png?raw=true"
+                alt="GuardianLogo" class="logo2"></div>
+    </div>
+    <div>
+        <div class="alert" id="alertBox">
+            <label id="alertMessage" class="alertMessage"></label>
         </div>
+        <h2 class="h2">Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group">
+                <label for="email">Username</label>
+                <input type="email" formControlName="email" class="form-control" [(ngModel)]="credentials.email"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Username is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" class="form-control"
+                    [(ngModel)]="credentials.password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <a routerLink="/register" class="reg btn-link">Register</a>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="password" class="form-control" [(ngModel)]="credentials.password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <button type="submit" [disabled]="loading" class="btn btn-primary">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            Login
-        </button>
-        <a routerLink="/register" class="reg btn-link">Register</a>
-    </div>
-</form>
-</div>
 </div>

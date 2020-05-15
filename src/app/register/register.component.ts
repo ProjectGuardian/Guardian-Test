@@ -1,18 +1,17 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { AuthenticationService, TokenPayload } from "../authentication.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { AlertService } from "../_services/alert.service";
-import { first } from "rxjs/operators";
 
 @Component({
   templateUrl: "./register.component.html",
-  styleUrls:['./register.component.less']
+  styleUrls: ['./register.component.less']
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent {
   registerForm: FormGroup;
-    loading = false;
-    submitted = false;
+  loading = false;
+  submitted = false;
+
   credentials: TokenPayload = {
     id: 0,
     first_name: "",
@@ -22,47 +21,42 @@ export class RegisterComponent implements OnInit{
     college: ""
   };
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private auth: AuthenticationService, 
-    private router: Router,
-    private alertService: AlertService) {}
+  constructor(public auth: AuthenticationService,
+              private router: Router,
+              private formBuilder: FormBuilder) { }
 
-ngOnInit() {
-        this.registerForm = this.formBuilder.group({
-            first_name: ['', Validators.required],
-            last_name: ['', Validators.required],
-            email: ['', Validators.required],
-            password: ['', [Validators.required, Validators.minLength(6)]],
-            college: ['', Validators.required]
-        });
-    }
-    
-    get f() { return this.registerForm.controls; }
-
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      college: ['', Validators.required]
+    });
+  }
+  get f() { return this.registerForm.controls; }
+  
   register() {
     this.submitted = true;
 
-        // reset alerts on submit
-        this.alertService.clear();
-
-        // stop here if form is invalid
         if (this.registerForm.invalid) {
             return;
         }
 
-        this.loading = true;
-    this.auth.register(this.registerForm.value)
-      .pipe(first())
-      .subscribe(
-      data => {
-        this.alertService.success('Registration successful', true);
-        this.router.navigate(['/login']);
+    this.auth.register(this.credentials).subscribe(
+      () => {
+        document.getElementById('alertMessage').innerText = 'Registration Successful';
+        document.getElementById('alertBox').style.visibility = "visible";
+        document.getElementById('alertBox').style.backgroundColor = "rgb(131, 255, 126)";
+        document.getElementById('alertBox').style.border = "1px solid green";
+        setTimeout(() =>this.router.navigateByUrl("/profile"), 1500);
       },
       err => {
-        this.alertService.error(err);
+        document.getElementById('alertMessage').innerText = 'Username already exists';
+        document.getElementById('alertBox').style.visibility = "visible";
         this.loading = false;
       }
     );
+    setTimeout(() => document.getElementById('alertBox').style.visibility = "hidden",5000);
   }
 }

@@ -16,7 +16,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register';
-import { AlertComponent } from './_components';
 import { AdminComponent } from './admin/admin.component';
 
 import { environment } from 'environments/environment.prod';
@@ -72,7 +71,6 @@ import { MatListModule } from '@angular/material/list';
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-        AlertComponent,
         AdminComponent,
         ItemsComponent,
         AddPostComponent,

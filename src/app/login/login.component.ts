@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, TokenPayload } from '../authentication.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder,Validators, FormGroup } from '@angular/forms';
-import { AlertService } from '../_services/alert.service';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -24,7 +23,7 @@ export class LoginComponent implements OnInit {
     college:''
   }
 
-  constructor(private alertService: AlertService,
+  constructor(
               private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private auth: AuthenticationService, 
@@ -44,26 +43,24 @@ get f() { return this.loginForm.controls; }
   login() {
     this.submitted = true;
 
-        // reset alerts on submit
-    this.alertService.clear();
-
     if (this.loginForm.invalid) {
       return;
   }
   this.loading = true;
-    this.auth.login(this.loginForm.value)
-    .pipe(first())
+    this.auth.login(this.credentials)
     .subscribe(
-      data => {
+      () => {
       if(this.f.email.value == 'Admin'){
           this.router.navigate([this.f.email.value]);
       }else
         this.router.navigateByUrl('/home')
       },
       err => {
-        this.alertService.error('Login Error: Username or Password is Invalid');
+        document.getElementById('alertMessage').innerText = 'Invalid Username or Password';
+        document.getElementById('alertBox').style.visibility = "visible";
         this.loading = false;
       }
-    )
+    );
+    setTimeout(() => document.getElementById('alertBox').style.visibility = "hidden",5000);
   }
 }
