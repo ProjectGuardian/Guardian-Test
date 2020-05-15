@@ -156,9 +156,28 @@ button:focus {
     top: 18vw;
   }
 }
+@media screen and (max-width:450px){
+  :host ::ng-deep .bulletin .bulletinPanel{
+    top: 14vw;
+  }
+}
 
 @media screen and (max-width:426px){
   .mat-toolbar.mat-primary{
     right: -10px;
+  }
+  :host ::ng-deep .bulletin .bulletinPanel{
+    top: 11vw;
+  }
+}
+@media screen and (max-width:396px){
+  :host ::ng-deep .bulletin .bulletinPanel{
+    top: 7vw;
+  }
+}
+
+@media screen and (max-width:366px){
+  :host ::ng-deep .bulletin .bulletinPanel{
+    top: 4vw;
   }
 }
