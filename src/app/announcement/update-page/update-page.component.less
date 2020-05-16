@@ -98,13 +98,13 @@
         width: 100%;
     }
     .Tups {
-        font-size: 70px;
-        padding: 35px;
-        padding-left: 18%;
-        background-size: 120%;
+        font-size: 1.4rem;
+        padding: 10px;
+        padding-left: 60px;
+        background-size: cover;
     }
     .post-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         display: grid;
     }
     .post {
@@ -114,34 +114,43 @@
         width: 100%;
     }
     .post-title {
-        background-size: 100%;
+        background-size: cover;
     }
     .post-title h1 {
-        font-size: 355%;
+        font-size: 1.1rem;
     }
     .message-post h2, .message-post h3 {
-        font-size: 200%;
+        font-size: 15px;
     }
     .message-post p {
-        font-size: 2.3rem;
-        padding: 30px;
+        font-size: 1.1rem;
+        padding: 13px;
     }
 }
 @media screen and (max-width: 768px) {
+    .post-grid {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
     .Tups {
-        font-size: 50px;
-        padding: 25px;
-        padding-left: 130px;
+        font-size: 1.4;
+        padding: 12px;
+        padding-left: 60px;
     }
     .post-title h1 {
-        font-size: 280%;
+        font-size: 1.1rem;
     }
     .message-post p {
-        font-size: 2.2rem;
-        padding: 30px;
+        font-size: 1.2rem;
+        padding: 13px;
+        text-align: justify;
     }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 472px) {
+    .post-grid {
+        grid-template-columns: repeat(1, 1fr);
+        display: grid;
+    }
     .Tups {
         font-size: 154%;
         padding: 8px;
