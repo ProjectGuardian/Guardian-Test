@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {Item, CommentsItem, Likes, Sched, Vid, Brackets, Marqs} from '../_models/item';
+import {Item, CommentsItem, Likes, Sched, Vid, Brackets, Marqs, Updates} from '../_models/item';
 import { Observable, interval } from 'rxjs';
 import { map } from "rxjs/operators";
 
@@ -36,6 +36,10 @@ export class ItemService {
   itemsCollection7 : AngularFirestoreCollection<Marqs>;
   marqs: Observable<Marqs[]>;
   postDoc7:AngularFirestoreDocument<Marqs>;
+  
+  itemsCollection8 : AngularFirestoreCollection<Updates>;
+  updates: Observable<Updates[]>;
+  postDoc8:AngularFirestoreDocument<Updates>;
 
   constructor(public afs: AngularFirestore) { 
     this.itemsCollection = this.afs.collection('posts', ref => ref.orderBy('timeDate', 'desc'));
@@ -94,6 +98,14 @@ export class ItemService {
         const data7 = aaaaaaa.payload.doc.data() as Marqs
         data7.id = aaaaaaa.payload.doc.id;
         return data7;
+      });
+    }));
+    this.itemsCollection8 = this.afs.collection('updates');
+    this.updates = this.itemsCollection8.snapshotChanges().pipe(map(changes8 => {
+      return changes8.map(aaaaaaaa=>{
+        const data8 = aaaaaaaa.payload.doc.data() as Updates
+        data8.id = aaaaaaaa.payload.doc.id;
+        return data8;
       });
     }));
   }
@@ -190,6 +202,17 @@ export class ItemService {
     deleteMarqs(marq:Marqs){
       this.postDoc7 = this.afs.doc(`marqs/${marq.id}`);
       this.postDoc7.delete();
+    }
+    //Updates
+    getUpdates(){
+      return this.updates;
+    }
+    addUpdates(update:Updates){
+      this.itemsCollection8.add(update);
+    }
+    updateUText(update:Updates){
+      this.postDoc8 = this.afs.doc(`updates/${update.id}`);
+      this.postDoc8.update(update);
     }
   }
 

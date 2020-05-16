@@ -37,3 +37,10 @@ export interface Item{
     id:any;
     marqText:any;
   }
+  export interface Updates{
+    id: any;
+    uText: any;
+    date: any;
+    imgLink: any;
+    title: any;
+  }

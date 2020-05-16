@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="mainTitle">
+        <label class="subjectTitle">Admin</label><label class="subject2Title">Dashboard</label>
+    </div>
     <div class="matchSched">
         <form (ngSubmit)="onSubmit()" class="form">
             <label class="subject">Match</label> <label class="subject2">Schedules</label>
@@ -36,6 +39,29 @@
             </div>
         </form>
     </div>
+    
+</div>
+<div class="rightPanel">
+    <div class="matchSched">
+        <form (ngSubmit)="onSubmit5()" class="form">
+            <label class="subject">Guardian</label><label class="subject2">Updates</label>
+            <div class="input-field">
+                <input type="text" placeholder="Input title . . ." [(ngModel)]="update.title" name="uText"  class="codenamefield">
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Input date . . ." [(ngModel)]="update.date" name="uText"  class="codenamefield">
+            </div>
+            <div class="input-field">
+                <textarea id="mytextarea" name="uText" placeholder="Input guardian update . . ." cols="30" rows="30" [(ngModel)]="update.uText" class="uText"></textarea>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Input image link . . ." [(ngModel)]="update.imgLink" name="uText"  class="codenamefield">
+            </div>
+            <div class="input-field">
+                <button class="btnSched" type="submit">Post Update</button>
+            </div>
+        </form>
+    </div>
     <div class="matchSched">
         <form (ngSubmit)="onSubmit4()" class="form">
             <label class="subject">News</label><label class="subject2">Update</label>
@@ -47,4 +73,5 @@
             </div>
         </form>
     </div>
+
 </div>

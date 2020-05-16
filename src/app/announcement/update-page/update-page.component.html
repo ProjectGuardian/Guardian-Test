@@ -7,150 +7,19 @@
         <h1 class="Tups">GUARDIAN UPDATES</h1>
     </div>
     <div class="post-grid">
-       
-        <!--Post #6-->
-        <div class="post">
+        <div class="post"  *ngFor="let update of updates">
             <div>
-                <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/whatscoming.jpg?raw=true" alt="" class="picture-post">
+                <img src={{this.update.imgLink}} alt="" class="picture-post">
             </div>
 
             <div class="post-title">
-                <h1>Guardian: What's New?</h1>
+                <h1>{{update.Title}}</h1>
             </div>
 
             <div class="message-post">
-                <h2>May 15, 2020</h2>
+                <h2>{{update.date}}</h2>
                 <p>
-                    We are happy to share with you guys our new additions to the Guardian website. We added 
-                    a contact page, so that you can reach out to us with all of your concerns and opinions.
-                </p>
-                <p>
-                    Your opinion matters to us greatly and we take each concern seriously, so we are excited 
-                    to include a contact page in our website. We thank you for your patience and we hope
-                    you enjoy and appreciate our newest additions to the website. Stay safe and God bless.
-                </p>
-                <h3>-Sincerely, Team Guardian-</h3>
-            </div>
-        </div>
-        <!--Post #5-->
-        <div class="post">
-            <div>
-                <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/whatscoming.jpg?raw=true" alt="" class="picture-post">
-            </div>
-
-            <div class="post-title">
-                <h1>Guardian Team Updates</h1>
-            </div>
-
-            <div class="message-post">
-                <h2>May 5, 2020</h2>
-                <p>
-                    In the next few months we have big plans for our website, unfortunately we cannot reveal
-                    those plans just yet, however we would like everyone to stay updated and look forward on what's
-                    to come, we promise that as the months go by, the Guardian website will improve drastically. 
-                </p>
-                <p>As for the Tournament, with the information we currently have, the earliest date we can give you 
-                    is that it may start in the month of August, 2020. We hope you are all safe, God bless.</p>
-                <h3>-Sincerely, Team Guardian-</h3>
-            </div>
-        </div>
-        <!--Post #4-->
-        <div class="post">
-            <div>
-                <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/image/final.jpg?raw=true" alt="" class="picture-post">
-            </div>
-
-            <div class="post-title">
-                <h1>Update: Quarantine</h1>
-            </div>
-
-            <div class="message-post">
-                <h2>April 29, 2020</h2>
-                <p>
-                 Good day everyone, We hope you are all doing well, with the current situation and the recent 
-                announcement of the goverment, the tournament is still postponed. 
-                </p>
-                <p>
-                   We do however, would like to inform everyone that the Guardian Team is doing their best to make sure that the 
-                tournament will be ready once the Enhance Community Quarantine is over. Stay safe and God Bless.
-                </p>
-                <h3>-Sincerely, Team Guardian-</h3>
-            </div>
-        </div>
-        <!--Post #3-->
-        <div class="post">
-            <div>
-                <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/GUARDIANS.jpg?raw=true" alt="" class="picture-post">
-            </div>
-
-            <div class="post-title">
-                <h1>Guardian: Prayers</h1>
-            </div>
-
-            <div class="message-post">
-                <h2>April 26, 2020</h2>
-                <p>
-                    We would like to send our prayers to those who are infected with the Corona Virus and
-                    to say thanks to our brave frontliners who are working hard and tirelessly
-                    to save as much lives as possible.</p>
-
-                <p>
-                    we are truly thankful for all of your sacrifices and 
-                    hard work. We encourage everyone to stay at home if possible and help those who need support
-                    and assistance. Stay safe and God bless to you all.
-                </p>
-        
-                <h3>-Sincerely, Team Guardian-</h3>
-            </div>
-        </div>
-        <!--Post #2-->
-        <div class="post">
-            <div>
-                <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/image/final.jpg?raw=true" alt="" class="picture-post">
-            </div>
-
-            <div class="post-title">
-                <h1>Guardian Tournament</h1>
-            </div>
-
-            <div class="message-post">
-                <h2>April 23, 2020</h2>
-                <p>
-                    We, the Guardian team is happy to share with you our Guardian Tournament. Sadly due 
-                    to the current situation our country is in, our current plans for the tournament as well as the 
-                    scheduled matches will be postponed and started once our country's situation gets better. 
-                </p>
-                <p>
-                    We encourage everyone to stay at home and be safe.
-                    We will keep everyone updated with our plans and actions. We will post all our updates and news. 
-                    Thank you and God bless!
-                </p>
-                <h3>-Sincerely, Team Guardian-</h3>
-            </div>
-        </div>
-        <!--Post #1-->
-        <div class="post">
-            <div>
-                <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/GUARDIANS.jpg?raw=true" alt="" class="picture-post">
-            </div>
-
-            <div class="post-title">
-                <h1>The Birth of Guardian</h1>
-            </div>
-
-            <div class="message-post">
-                <h2>April 15, 2020</h2>
-                <p>
-                    We are excited to announce The Guardian Website, our goal with this website is to 
-                    create a user-friendly browsing experience for anyone to use. We hope to create a safe 
-                    environment so you can feel comfortable in sharing opinions and to have conversations With
-                    other users.
-                </p>
-                <p>
-                    Currently the website is far from complete, that is why we hope you look forward to our 
-                    updates and new additions to the website in the coming months.
-                    We hope you enjoy our website uncluttered design that is easy to navigate, 
-                    and more user-friendly. 
+                    {{update.uText}}
                 </p>
                 <h3>-Sincerely, Team Guardian-</h3>
             </div>
