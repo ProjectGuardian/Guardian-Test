@@ -22,8 +22,8 @@ export class RegisterComponent {
   };
 
   constructor(public auth: AuthenticationService,
-              private router: Router,
-              private formBuilder: FormBuilder) { }
+    private router: Router,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -35,13 +35,13 @@ export class RegisterComponent {
     });
   }
   get f() { return this.registerForm.controls; }
-  
+
   register() {
     this.submitted = true;
 
-        if (this.registerForm.invalid) {
-            return;
-        }
+    if (this.registerForm.invalid) {
+      return;
+    }
 
     this.auth.register(this.credentials).subscribe(
       () => {
@@ -49,7 +49,7 @@ export class RegisterComponent {
         document.getElementById('alertBox').style.visibility = "visible";
         document.getElementById('alertBox').style.backgroundColor = "rgb(131, 255, 126)";
         document.getElementById('alertBox').style.border = "1px solid green";
-        setTimeout(() =>this.router.navigateByUrl("/profile"), 1500);
+        setTimeout(() => this.router.navigateByUrl("/profile"), 1500);
       },
       err => {
         document.getElementById('alertMessage').innerText = 'Username already exists';
@@ -57,6 +57,6 @@ export class RegisterComponent {
         this.loading = false;
       }
     );
-    setTimeout(() => document.getElementById('alertBox').style.visibility = "hidden",5000);
+    setTimeout(() => document.getElementById('alertBox').style.visibility = "hidden", 5000);
   }
 }
