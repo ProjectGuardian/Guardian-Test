@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service'
 
 @Component({
   selector: 'app-side-nav',
@@ -17,7 +18,7 @@ export class SideNavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver,private router: Router) {}
+  constructor(private breakpointObserver: BreakpointObserver,public auth: AuthenticationService,private router: Router) {}
   home(){
     this.router.navigate(['/home']);
 }
@@ -29,5 +30,9 @@ export class SideNavComponent {
 }
   contactPage(){
     this.router.navigate(['/contact']);
+}
+  logout() {
+  this.auth.logout();
+  this.router.navigate(['/login']);
 }
 }
