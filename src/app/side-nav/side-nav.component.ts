@@ -21,7 +21,6 @@ export class SideNavComponent {
   constructor(private breakpointObserver: BreakpointObserver,public auth: AuthenticationService,private router: Router) {}
   home(){
     this.router.navigate(['/home']);
-    document.getElementById('Home').style.backgroundColor = "rgba(190, 190, 190, 0.116)";
     document.getElementById('tournament').style.backgroundColor = "transparent";
     document.getElementById('updates').style.backgroundColor = "transparent";
     document.getElementById('contacts').style.backgroundColor = "transparent";
