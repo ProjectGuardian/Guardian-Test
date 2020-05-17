@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client ",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "npm run build",
+    "install": "npm install",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
