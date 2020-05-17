@@ -16,6 +16,7 @@
       <a mat-list-item (click)="tournamentPage()" (click)="drawer.close()" id="tournament">Tournament</a>
       <a mat-list-item (click)="blogPage()" (click)="drawer.close()" id="updates">Updates</a>
       <a mat-list-item (click)="contactPage()" (click)="drawer.close()" id="contacts">Contacts</a>
+      <a mat-list-item (click)="dashboard()" (click)="drawer.close()" *ngIf="this.auth.getUserDetails().email == 'Admin'" id="admin">Admin Page</a>
       <a mat-list-item (click)="logout()"(click)="drawer.close()">Logout</a>
     </mat-nav-list>
       <app-user-profile class="user"></app-user-profile>
