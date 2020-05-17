@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client ",
     "build": "ng build",
     "test": "ng test",
@@ -29,6 +29,7 @@
     "angularfire2": "^5.4.2",
     "bootstrap": "^4.4.1",
     "css-loader": "^3.5.2",
+    "express": "^4.17.1",
     "firebase": "^7.14.0",
     "font-awesome": "^4.7.0",
     "heroku": "^7.40.0",
