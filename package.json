@@ -4,7 +4,6 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client ",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

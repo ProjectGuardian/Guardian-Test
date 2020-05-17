@@ -1,8 +1,0 @@
-{
-    "/users/*":{
-        "target" : "https://guardian-website.herokuapp.com",
-        "secure" : false,
-        "logLevel": "debug",
-        "changeOrigin": true
-    }
-}
