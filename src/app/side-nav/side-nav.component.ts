@@ -24,7 +24,6 @@ export class SideNavComponent {
     document.getElementById('tournament').style.backgroundColor = "transparent";
     document.getElementById('updates').style.backgroundColor = "transparent";
     document.getElementById('contacts').style.backgroundColor = "transparent";
-    document.getElementById('admin').style.backgroundColor = "transparent";
 }
   tournamentPage(){
     this.router.navigate(['/tournament-home']);
@@ -32,7 +31,6 @@ export class SideNavComponent {
     document.getElementById('Home').style.backgroundColor = "transparent";
     document.getElementById('updates').style.backgroundColor = "transparent";
     document.getElementById('contacts').style.backgroundColor = "transparent";
-    document.getElementById('admin').style.backgroundColor = "transparent";
 }
   blogPage(){
     this.router.navigate(['/update-page']);
@@ -40,7 +38,6 @@ export class SideNavComponent {
     document.getElementById('tournament').style.backgroundColor = "transparent";
     document.getElementById('Home').style.backgroundColor = "transparent";
     document.getElementById('contacts').style.backgroundColor = "transparent";
-    document.getElementById('admin').style.backgroundColor = "transparent";
 }
   contactPage(){
     this.router.navigate(['/contact']);
@@ -48,11 +45,9 @@ export class SideNavComponent {
     document.getElementById('tournament').style.backgroundColor = "transparent";
     document.getElementById('updates').style.backgroundColor = "transparent";
     document.getElementById('Home').style.backgroundColor = "transparent";
-    document.getElementById('admin').style.backgroundColor = "transparent";
 }
   dashboard(){
     this.router.navigate(['/Admin']);
-    document.getElementById('admin').style.backgroundColor = "rgba(190, 190, 190, 0.116)";
     document.getElementById('contacts').style.backgroundColor = "transparent";
     document.getElementById('tournament').style.backgroundColor = "transparent";
     document.getElementById('updates').style.backgroundColor = "transparent";
