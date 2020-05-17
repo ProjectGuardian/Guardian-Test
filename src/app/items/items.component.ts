@@ -122,11 +122,7 @@ credentials: TokenPayload = {
   }
   //Reacts
   ups(post: Item, userEmail){
-    // if(){
-    //   alert('You already liked this post')
-    // }else{
-    //   console.log(this.like.id);
-    // }
+    
     if(this.likes.find(x => x.id == `${this.auth.getUserDetails().email}_${post.id}`)){
       alert('You already liked the post');
       console.log(this.like.id);
@@ -139,6 +135,7 @@ credentials: TokenPayload = {
     this.like.id = `${userEmail}_${post.id}`;
     this.itemService.updateItem(post);
     this.itemService.setLikes(this.like.id, this.like.userEmail, this.like.postID,this.like.addCount);
+    document.getElementById('Fancy').style.backgroundColor = "rgba(227, 116, 47, 0.116)";
     }
 }
   showComments(event, post: Item){
