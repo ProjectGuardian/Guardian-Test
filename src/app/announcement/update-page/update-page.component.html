@@ -22,7 +22,7 @@
             </div>
 
             <div class="message-post">
-                <h2>{{update.date}}</h2>
+                <h2>{{update.date.seconds*1000 | date: 'MMM d y'}}</h2>
                 <p>
                     {{update.uText}}
                 </p>

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.less']
 })
 export class AdminComponent implements OnInit {
+  now = new Date();
   scheds:Sched[];
   sched: Sched ={
     id:'',
@@ -65,6 +66,7 @@ export class AdminComponent implements OnInit {
   }
   //Updates
   onSubmit5(){
+    this.update.date = this.now;
     this.itemService.addUpdates(this.update);
     this.update.date = '';
     this.update.uText = '';
