@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "cd Guardian-Test && npm run build",
+    "build": "npm run build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
