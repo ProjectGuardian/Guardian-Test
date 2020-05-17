@@ -5,6 +5,24 @@ import { AuthenticationService } from '../authentication.service';
 import { interval, Observable } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
 
+export interface UserDetails {
+  id: number
+  first_name: string
+  last_name: string
+  email: string
+  password: string
+  exp: number
+  iat: number
+  college: string
+}
+export interface TokenPayload {
+  id: number
+  first_name: string
+  last_name: string
+  email: string
+  password: string
+  college:string
+}
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -47,6 +65,14 @@ like: Likes = {
   addCount:0
 }
 
+credentials: TokenPayload = {
+  id: 0,
+  first_name: "",
+  last_name: "",
+  email: "",
+  password: "",
+  college: ""
+};
   constructor(public auth: AuthenticationService, private itemService: ItemService,private afs: AngularFirestore) { 
   }
 
@@ -95,25 +121,26 @@ like: Likes = {
     this.itemService.deleteComm(comment);
   }
   //Reacts
-//   ups(post: Item, userEmail,user){
-//     // if(this.like.id.includes(`${userEmail}_${post.id}`)){
-//     //   alert('You already liked the post');
-//     // }else{
-//     this.like.addCount = 1;
-//     post.ups += this.like.addCount;
-//     this.like.postID = post.id;
-//     this.like.userEmail = userEmail;
-//     this.like.id = `${userEmail}_${post.id}`;
-//     this.itemService.updateItem(post);
-//     this.itemService.setLikes(this.like.id, this.like.userEmail, this.like.postID,this.like.addCount);
-//     this.user.userID = userEmail;
-//     this.itemService.addUser(user);
-//     // }
-// }
-//   downs(post: Item){
-//     post.downs +=1;
-//     this.itemService.updateItem(post);
-//   }
+  ups(post: Item, userEmail){
+    // if(){
+    //   alert('You already liked this post')
+    // }else{
+    //   console.log(this.like.id);
+    // }
+    if(this.likes.find(x => x.id == `${this.auth.getUserDetails().email}_${post.id}`)){
+      alert('You already liked the post');
+      console.log(this.like.id);
+    }else{
+    console.log(this.like.id);
+    this.like.addCount = 1;
+    post.ups += this.like.addCount;
+    this.like.postID = post.id;
+    this.like.userEmail = userEmail;
+    this.like.id = `${userEmail}_${post.id}`;
+    this.itemService.updateItem(post);
+    this.itemService.setLikes(this.like.id, this.like.userEmail, this.like.postID,this.like.addCount);
+    }
+}
   showComments(event, post: Item){
       this.commentsV = true;
       this.commentsToShow = post;
