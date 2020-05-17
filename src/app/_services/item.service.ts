@@ -210,9 +210,9 @@ export class ItemService {
     addUpdates(update:Updates){
       this.itemsCollection8.add(update);
     }
-    updateUText(update:Updates){
+    deleteUpdates(update:Updates){
       this.postDoc8 = this.afs.doc(`updates/${update.id}`);
-      this.postDoc8.update(update);
+      this.postDoc8.delete();
     }
   }
 
