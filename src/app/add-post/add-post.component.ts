@@ -38,6 +38,12 @@ export class AddPostComponent implements OnInit {
       this.itemService.addItem(this.post);
       this.post.post = '';
       this.post.codename = '';
+    }else{
+      document.getElementById('errorCon').style.visibility = 'visible';
+      document.getElementById('error').style.visibility = 'visible';
+
+      setTimeout(() => document.getElementById('errorCon').style.visibility = 'hidden', 3000);
+      setTimeout(() => document.getElementById('error').style.visibility = 'hidden', 3000);
     }
   }
 }
