@@ -8,9 +8,18 @@ import { Router } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
+  message:string;
+  name:string;
+
   constructor(private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  appendMailTo(){
+    this.message = this.message;
+    this.name = this.name;
+
   }
   home(){
     this.router.navigate(['/home']);
