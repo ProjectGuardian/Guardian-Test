@@ -129,21 +129,23 @@ hr{
     margin-top: 10px;
 }
 
-.labelFancied{
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(248, 133, 24);
-    border-radius:4px;
-    visibility: hidden;
-}
-
-
 .labelFancy{
     margin-left: 2px;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(248, 133, 24);
-    border-radius:4px;
+    color: #ffffff;
+    width: 55%;
+    margin: 0;
+    overflow: hidden;
+    height: 29px;
+}
+#NoOfFancy{
+    margin-left: 3px;
+}
+#Fancied{
+    margin-left: 5px;
+    padding-left: 2px;
+    padding-right: 3px;
+    border: 1px solid #f88518;
+    border-radius: 4px;
 }
 
 .upBTN{
@@ -154,10 +156,11 @@ hr{
     cursor: pointer;
 }
 
-.upBTN:hover, .labelFancied:hover{
-    visibility: visible;
-    height: 30px;
-    width: auto;
+.labelFancy:hover{
+    width: 102%;
+    white-space: nowrap;
+    color: #ffffff;
+    transition: 0.15s
 }
 .upBTNclicked{
     background-color: rgb(231, 147, 67);
