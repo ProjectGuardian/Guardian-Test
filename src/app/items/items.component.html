@@ -26,10 +26,11 @@
         </div>
         <div class="reaction-container">
             <form (ngSubmit)="ups(post, auth.getUserDetails().email)" class="form1" >
-                <label>
+                <label class="labelFancy">
                 <div>
                 <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/FancyIcon.png?raw=true" class="upBTN" id="Fancy" data-toggle="tooltip" data-placement="top" title="Fancy!">
-                <label class="labelFancy">{{post.ups}}</label><label class="labelFancied">-Fancied!</label>
+                <label id="NoOfFancy">{{post.ups}}</label>
+                <label id="Fancied">Fancied!</label>
                 </div>
                 <input type="submit" value="" class="btn" style="display: none;"></label>
                 <input name="upsBtn" type="hidden" id="upsBtn" [(ngModel)]="post.ups" value={{post.ups}}>
