@@ -155,7 +155,7 @@ export class ItemService {
     this.postDoc3.update(like);
   }
   setLikes(id,userEmail,postID,addCount){
-    const like: Likes = { id, userEmail, postID, addCount };
+    const like: Likes = { id, userEmail, postID, addCount};
     const likesPath = `likes/${like.userEmail}_${like.postID}`;
     return this.afs.doc(likesPath).set(like);
   }

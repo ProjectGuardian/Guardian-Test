@@ -1,3 +1,6 @@
+<div class="toastCon" id="toastCon">
+    <label id="hiddenT" class="hiddenToast" >You've already fancied the post</label>
+    </div>
 <div *ngIf="posts?.length > 0;else noItems">
     <div class="searchBarClass">
     <input type="text" name="search" autocomplete="off" [(ngModel)]="search" class="searchBar" placeholder="Search a post . . . .">
@@ -24,8 +27,10 @@
         <div class="reaction-container">
             <form (ngSubmit)="ups(post, auth.getUserDetails().email)" class="form1" >
                 <label>
-                <img id="likeIcon" src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/FancyIcon.png?raw=true" class="upBTN" id="Fancy" data-toggle="tooltip" data-placement="top" title="Fancy!">
+                <div>
+                <img src="https://github.com/ProjectGuardian/Guardian-Test/blob/master/src/assets/FancyIcon.png?raw=true" class="upBTN" id="Fancy" data-toggle="tooltip" data-placement="top" title="Fancy!">
                 <label>{{post.ups}}</label>
+                </div>
                 <input type="submit" value="" class="btn" style="display: none;"></label>
                 <input name="upsBtn" type="hidden" id="upsBtn" [(ngModel)]="post.ups" value={{post.ups}}>
                 <input type="hidden" name="likesID" id="likesID" [(ngModel)]="like.id" value={{auth.getUserDetails()?.email}}_{{post.id}}>

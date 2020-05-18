@@ -38,6 +38,7 @@ commentsV:boolean = false;
 editState:boolean = false;
 commentState:boolean = false;
 itemToEdit: Item;
+itemToLike: Item;
 commentsToShow: Item;
 commentToEdit: CommentsItem;
 cTimeDate =  Date();
@@ -122,12 +123,12 @@ credentials: TokenPayload = {
   }
   //Reacts
   ups(post: Item, userEmail){
-    
     if(this.likes.find(x => x.id == `${this.auth.getUserDetails().email}_${post.id}`)){
-      alert('You already liked the post');
-      console.log(this.like.id);
+      document.getElementById('hiddenT').style.visibility = "visible";
+      setTimeout(() => document.getElementById('hiddenT').style.visibility = "hidden",2000);
+      document.getElementById('toastCon').style.visibility = "visible";
+      setTimeout(() => document.getElementById('toastCon').style.visibility = "hidden",2000);
     }else{
-    console.log(this.like.id);
     this.like.addCount = 1;
     post.ups += this.like.addCount;
     this.like.postID = post.id;
@@ -135,7 +136,6 @@ credentials: TokenPayload = {
     this.like.id = `${userEmail}_${post.id}`;
     this.itemService.updateItem(post);
     this.itemService.setLikes(this.like.id, this.like.userEmail, this.like.postID,this.like.addCount);
-    document.getElementById('Fancy').style.backgroundColor = "rgba(227, 116, 47, 0.116)";
     }
 }
   showComments(event, post: Item){
