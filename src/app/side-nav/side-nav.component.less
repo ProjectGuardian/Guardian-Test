@@ -40,12 +40,12 @@ button:focus {
 
 .mat-toolbar.mat-primary {
   position: fixed;
-  display: flex;
+  display: none;
   justify-content: flex-end;
   top: 0;
   right: 0;
   z-index: 3;
-  width: 0%;
+  width: 14%;
   background: inherit;
   
 }
@@ -139,27 +139,18 @@ button:focus {
     background: transparent;
     border: transparent;
   }
-  .nav-button:after {
-    content: "";
-    background: #90EE90;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-  }
-  
-  .nav-button:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
+  .mat-toolbar.mat-primary {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    width: 21%;
+    background: inherit;
+    
   }
 }
-
 @media screen and (max-width:961px){
   :host ::ng-deep .bulletin .bulletinPanel{
     top: 22vw;
