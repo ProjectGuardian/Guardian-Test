@@ -100,7 +100,7 @@ export class ItemService {
         return data7;
       });
     }));
-    this.itemsCollection8 = this.afs.collection('updates', ref3 => ref3.orderBy('date', 'asc'));
+    this.itemsCollection8 = this.afs.collection('updates', ref3 => ref3.orderBy('date', 'desc'));
     this.updates = this.itemsCollection8.snapshotChanges().pipe(map(changes8 => {
       return changes8.map(aaaaaaaa=>{
         const data8 = aaaaaaaa.payload.doc.data() as Updates
