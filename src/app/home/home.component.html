@@ -10,7 +10,7 @@
     <div class="RightPanel">
         <div class="marquee" >
         <div *ngFor="let marq of marqs">
-            <marquee behavior="scroll" scrollamount="8" direction="left"><button class="btnDelete" (click)="deleteNews($event, marq)" *ngIf="this.auth.getUserDetails().email == 'Admin'"><img src="/assets/delete.png" class="icon"></button>{{marq.marqText}}</marquee>
+            <marquee behavior="scroll" scrollamount="8" direction="left">{{marq.marqText}}</marquee>
             <button class="btnDelete" (click)="deleteNews($event, marq)" *ngIf="this.auth.getUserDetails().email == 'Admin'"><img src="/assets/delete.png" class="icon"></button>
         </div>
          </div>

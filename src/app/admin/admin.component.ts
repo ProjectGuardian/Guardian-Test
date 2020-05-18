@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { ItemService } from '@/_services/item.service';
-import { Sched, Vid, Brackets, Marqs, Updates } from '@/_models/item';
+import { Sched, Vid, Brackets, Marqs, Updates, Item } from '@/_models/item';
 import { Router } from '@angular/router';
 
 @Component({
@@ -38,9 +38,22 @@ export class AdminComponent implements OnInit {
     imgLink:'',
     title: ''
   }
+  posts: Item[];
+  post: Item = {
+    id:'',
+    post: '',
+    ups:0,
+    downs:0,
+    commentid:'',
+    userName:'',
+    timeDate:''
+  }
   constructor(private router : Router, private itemService: ItemService) {
                }
   ngOnInit(): void {
+    this.itemService.getItems().subscribe(posts =>{
+      this.posts = posts;
+    })
   }
   //Match Schedule
   onSubmit(){
