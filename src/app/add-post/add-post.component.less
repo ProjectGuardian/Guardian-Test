@@ -81,15 +81,16 @@
     color: black;
 }
 .errorCon{
-    margin-top: -45px;
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     background-color: rgb(238, 96, 96);
-    padding-right: 100px;
-    padding-left: 100px;
-    margin-left: 100px;
     border-radius: 4px;
     border: 1px solid red;
+    width: 50%;
+    top: 63px;
+    left: 25%;
+    text-align: center;
+    z-index: 1;
 }
 //Mobile Responsive
 @media screen and (max-width: 1278px){
@@ -170,6 +171,13 @@
     
 
 }
+@media screen and (max-width:530px){
+    .errorCon{
+        width: 70%;
+        left: 15%;
+    }
+}
+
 @media screen and (max-width:426px){
     .codenamefield{
         width: 67%;
@@ -215,6 +223,10 @@
     }
     .icon{
         width: 12px;
+    }
+    .errorCon{
+        width: 80%;
+        left: 10%;
     }
 }
 
