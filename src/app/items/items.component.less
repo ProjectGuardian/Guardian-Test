@@ -110,6 +110,10 @@
     font-weight: bold;
 }
 
+hr{
+    opacity: 0%;
+}
+
 .counterIcon{
     height: 20px;
     width: auto;
@@ -121,19 +125,42 @@
 }
 
 .reaction-container{
-    margin-top: 25px;
+    margin-left: 18px;
+    margin-top: 10px;
 }
+
+.labelFancied{
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(248, 133, 24);
+    border-radius:4px;
+    visibility: hidden;
+}
+
+
+.labelFancy{
+    margin-left: 2px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(248, 133, 24);
+    border-radius:4px;
+}
+
 .upBTN{
-    height: 23px;
+    margin-bottom: 4px;
+    border-radius:4px;
+    height: 25px;
     width: auto;
     cursor: pointer;
 }
 
-.upBTN:hover{
+.upBTN:hover, .labelFancied:hover{
+    visibility: visible;
     height: 30px;
     width: auto;
 }
 .upBTNclicked{
+    background-color: rgb(231, 147, 67);
     height: 23px;
     width: auto;
     cursor: pointer;
@@ -198,9 +225,6 @@
     padding-right: 10px;
     text-align: center;
 }
-hr{
-    border: solid 1px rgb(107, 107, 107);
-}
 .timeDate{
     font-size: 13px;
     color: rgb(34, 34, 34);
@@ -220,6 +244,8 @@ hr{
     padding: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-bottom: 1px solid rgb(248, 133, 24);
+    border-radius: 10px;
 }
 .btnComment{
     position: absolute;
@@ -270,6 +296,7 @@ hr{
     cursor: pointer;
 }
 
+.post-content-c
 .div-CC{
     display: flex;
 }
