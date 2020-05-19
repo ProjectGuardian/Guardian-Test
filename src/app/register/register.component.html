@@ -26,7 +26,7 @@
     <div class="form-group">
         <label for="email">Username</label>
         <input type="text" formControlName="email" class="form-control" [(ngModel)]="credentials.email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
-        <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)" class="invalid-feedback">
+        <div *ngIf="submitted && f.email.errors && (f.email.dirty || f.email.touched)" class="invalid-feedback">
             <div *ngIf="f.email.errors.required">Username is required</div>
         </div>
     </div>
